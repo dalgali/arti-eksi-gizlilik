@@ -1,0 +1,927 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gizlilik Politikası · Artı Eksi</title>
+<meta name="description" content="Artı Eksi öğretmen uygulamasının gizlilik politikası: verileriniz cihazınızda kalır, sunucumuz yoktur, reklam ve analitik izleme kullanılmaz.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#46178F">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='49.5' fill='%23FFFFFF'/><path d='M50 2 a48 48 0 0 1 0 96 a24 24 0 0 1 0-48 a24 24 0 0 0 0-48' fill='%2346178F'/><rect x='39.5' y='24' width='21' height='4.6' rx='1.2' fill='%2346178F'/><rect x='47.7' y='15.8' width='4.6' height='21' rx='1.2' fill='%2346178F'/><rect x='39.5' y='72' width='21' height='4' rx='1.2' fill='%23FFFFFF'/><circle cx='50' cy='50' r='48' fill='none' stroke='%2346178F' stroke-width='3'/></svg>">
+<style>
+  :root {
+    --mor: #46178F;
+    --mor-koyu: #7C3AED;
+    --mor-hover: #3A1278;
+    --mor-yumusak: #EDE9FE;
+    --ikincil: #5B21B6;
+    --arti: #15803D;
+    --eksi: #B91C1C;
+
+    --zemin: #FFFFFF;
+    --kart: #FFFFFF;
+    --yuzey: #FAFAFA;
+    --yazi: #111827;
+    --yazi-ikincil: #4B5563;
+    --silik: #6B7280;
+    --kenarlik: #C4B5FD;
+    --ayirici: #DDD6FE;
+
+    --vurgu: var(--mor);
+    --hero-1: #46178F;
+    --hero-2: #7C3AED;
+    --golge: 0 1px 2px rgba(17, 24, 39, .04), 0 10px 28px rgba(70, 23, 143, .07);
+    --golge-guclu: 0 2px 6px rgba(17, 24, 39, .06), 0 18px 44px rgba(70, 23, 143, .12);
+    --logo-mor: #46178F;
+    --logo-acik: #FFFFFF;
+    --r: 16px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --zemin: #09090B;
+      --kart: #18181B;
+      --yuzey: #131316;
+      --yazi: #F3F4F6;
+      --yazi-ikincil: #A1A1AA;
+      --silik: #71717A;
+      --kenarlik: #5B21B6;
+      --ayirici: #4C1D95;
+      --mor-yumusak: #211A3D;
+      --arti: #4ADE80;
+      --eksi: #F87171;
+      --vurgu: var(--mor-koyu);
+      --hero-1: #2A0E58;
+      --hero-2: #5B21B6;
+      --golge: 0 1px 2px rgba(0, 0, 0, .55), 0 10px 30px rgba(0, 0, 0, .40);
+      --golge-guclu: 0 2px 8px rgba(0, 0, 0, .6), 0 20px 46px rgba(0, 0, 0, .5);
+      --logo-mor: #7C3AED;
+      --logo-acik: #F3F4F6;
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation: none !important; transition: none !important; }
+  }
+
+  body {
+    margin: 0;
+    background: var(--zemin);
+    color: var(--yazi);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+    overflow-x: hidden;
+    overflow-wrap: break-word;
+    text-rendering: optimizeLegibility;
+  }
+
+  a { color: var(--vurgu); text-underline-offset: 3px; overflow-wrap: break-word; }
+  a:hover { color: var(--mor-koyu); }
+
+  .atla {
+    position: absolute; left: -9999px; top: 0;
+    background: var(--mor); color: #fff; padding: 10px 16px; border-radius: 0 0 12px 0; z-index: 50;
+  }
+  .atla:focus { left: 0; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--hero-1) 0%, var(--hero-2) 100%);
+    color: #fff;
+    padding: 72px 20px 84px;
+    isolation: isolate;
+  }
+  .hero-motif {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    z-index: -1; pointer-events: none;
+  }
+  .hero-ic { max-width: 780px; margin: 0 auto; text-align: center; }
+  .amblem {
+    width: 104px; height: 104px;
+    margin: 0 auto 26px;
+    display: grid; place-items: center;
+    border-radius: 50%;
+    background: var(--logo-acik);
+    border: 1px solid rgba(255, 255, 255, .6);
+    box-shadow: 0 12px 34px rgba(14, 4, 34, .32);
+  }
+  .amblem svg { width: 78px; height: 78px; display: block; }
+  .hero h1 {
+    margin: 0 0 14px;
+    font-size: clamp(2rem, 6.2vw, 3.15rem);
+    line-height: 1.14;
+    letter-spacing: -.022em;
+    font-weight: 800;
+  }
+  .hero p {
+    margin: 0 auto 26px;
+    font-size: clamp(1.02rem, 2.6vw, 1.2rem);
+    color: rgba(255, 255, 255, .88);
+    max-width: 60ch;
+  }
+  .rozetler { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+  .rozet {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 7px 15px 7px 12px;
+    border: 1px solid rgba(255, 255, 255, .34);
+    background: rgba(255, 255, 255, .12);
+    border-radius: 999px;
+    font-size: .88rem; font-weight: 600; letter-spacing: .01em;
+    color: #fff;
+    backdrop-filter: blur(6px);
+  }
+  .rozet svg { width: 15px; height: 15px; flex: none; }
+
+  /* ---------- Yerleşim ---------- */
+  .kabuk {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 20px 64px;
+  }
+
+  /* ---------- İçindekiler ---------- */
+  .toc {
+    position: sticky; top: 0; z-index: 20;
+    margin: 0 -20px 26px;
+    padding: 10px 20px;
+    background: color-mix(in srgb, var(--zemin) 88%, transparent);
+    border-bottom: 1px solid var(--ayirici);
+    backdrop-filter: blur(10px);
+  }
+  .toc-baslik { display: none; }
+  .toc ol {
+    display: flex; gap: 6px; margin: 0; padding: 0; list-style: none;
+    overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch;
+  }
+  .toc ol::-webkit-scrollbar { display: none; }
+  .toc a {
+    display: block; white-space: nowrap;
+    padding: 6px 13px; border-radius: 999px;
+    font-size: .86rem; font-weight: 600; text-decoration: none;
+    color: var(--yazi-ikincil);
+    border: 1px solid transparent;
+  }
+  .toc a:hover { background: var(--mor-yumusak); color: var(--vurgu); }
+  .toc a.etkin {
+    background: var(--mor-yumusak);
+    color: var(--vurgu);
+    border-color: var(--kenarlik);
+  }
+
+  main { max-width: 68ch; }
+
+  @media (min-width: 1000px) {
+    .kabuk {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 250px;
+      gap: 52px;
+      align-items: start;
+      padding-top: 48px;
+    }
+    main { grid-column: 1; margin: 0; }
+    .toc {
+      grid-column: 2; grid-row: 1;
+      position: sticky; top: 32px;
+      margin: 0; padding: 20px 18px;
+      background: var(--kart);
+      border: 1px solid var(--ayirici);
+      border-radius: var(--r);
+      box-shadow: var(--golge);
+      backdrop-filter: none;
+    }
+    .toc-baslik {
+      display: block;
+      font-size: .74rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase;
+      color: var(--silik); margin: 0 0 12px 4px;
+    }
+    .toc ol { flex-direction: column; gap: 2px; overflow: visible; max-height: 70vh; overflow-y: auto; }
+    .toc a { white-space: normal; border-radius: 9px; padding: 6px 10px; }
+  }
+
+  /* ---------- Bölümler ---------- */
+  section { scroll-margin-top: 96px; margin: 0 0 44px; }
+  section > h2 {
+    display: flex; align-items: baseline; gap: 12px;
+    font-size: clamp(1.28rem, 3.4vw, 1.62rem);
+    line-height: 1.3; letter-spacing: -.015em; font-weight: 750;
+    margin: 0 0 14px;
+  }
+  section > h2 .no {
+    flex: none;
+    font-size: .78rem; font-weight: 700; letter-spacing: .04em;
+    color: var(--vurgu);
+    background: var(--mor-yumusak);
+    border: 1px solid var(--kenarlik);
+    border-radius: 8px;
+    padding: 2px 8px;
+    line-height: 1.5;
+  }
+  h3 { font-size: 1.02rem; font-weight: 700; margin: 26px 0 8px; letter-spacing: -.005em; }
+  p { margin: 0 0 14px; color: var(--yazi-ikincil); }
+  main strong { color: var(--yazi); font-weight: 650; }
+  ul { margin: 0 0 16px; padding-left: 1.25em; color: var(--yazi-ikincil); }
+  li { margin-bottom: 8px; }
+  li::marker { color: var(--vurgu); }
+
+  .kart {
+    background: var(--kart);
+    border: 1px solid var(--ayirici);
+    border-radius: var(--r);
+    padding: 20px 22px;
+    box-shadow: var(--golge);
+    margin: 0 0 18px;
+  }
+  .kart > :last-child { margin-bottom: 0; }
+
+  .not {
+    border-left: 3px solid var(--vurgu);
+    background: var(--yuzey);
+    border-radius: 0 12px 12px 0;
+    padding: 14px 18px;
+    margin: 0 0 18px;
+    font-size: .95rem;
+  }
+  .not > :last-child { margin-bottom: 0; }
+  .not.uyari { border-left-color: var(--eksi); }
+  .not.olumlu { border-left-color: var(--arti); }
+  .not b { color: var(--yazi); }
+
+  /* ---------- Kısaca kartları ---------- */
+  .ozet {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+    gap: 14px;
+    margin: 0 0 8px;
+  }
+  .ozet-kart {
+    position: relative;
+    background: var(--kart);
+    border: 1px solid var(--ayirici);
+    border-radius: 18px;
+    padding: 20px 18px 18px;
+    box-shadow: var(--golge);
+    overflow: hidden;
+  }
+  .ozet-kart::after {
+    content: ""; position: absolute; inset: 0 0 auto 0; height: 3px;
+    background: linear-gradient(90deg, var(--mor), var(--mor-koyu));
+    opacity: .85;
+  }
+  .ozet-kart .ikon {
+    width: 40px; height: 40px; border-radius: 12px;
+    display: grid; place-items: center;
+    background: var(--mor-yumusak);
+    border: 1px solid var(--kenarlik);
+    margin-bottom: 12px;
+  }
+  .ozet-kart .ikon svg { width: 21px; height: 21px; stroke: var(--vurgu); }
+  .ozet-kart h3 { margin: 0 0 5px; font-size: 1rem; }
+  .ozet-kart p { margin: 0; font-size: .91rem; line-height: 1.6; }
+
+  /* ---------- Tablo ---------- */
+  .tablo-sar {
+    border: 1px solid var(--ayirici);
+    border-radius: var(--r);
+    background: var(--kart);
+    box-shadow: var(--golge);
+    overflow: hidden;
+    margin: 0 0 12px;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+    font-size: .88rem;
+  }
+  caption { caption-side: bottom; padding: 10px 16px; font-size: .82rem; color: var(--silik); text-align: left; }
+  th, td {
+    padding: 12px 14px;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid var(--ayirici);
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+  thead th {
+    background: var(--mor-yumusak);
+    color: var(--vurgu);
+    font-size: .74rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+    border-bottom: 1px solid var(--kenarlik);
+  }
+  tbody th { font-weight: 650; color: var(--yazi); }
+  tbody td { color: var(--yazi-ikincil); }
+  tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
+  tbody tr:nth-child(even) { background: var(--yuzey); }
+  th .etiket, td .etiket { white-space: normal; display: inline-block; border-radius: 10px; }
+
+  /* Dar ekran: tabloyu yigilmis kart duzenine cevir */
+  @media (max-width: 720px) {
+    .tablo-sar {
+      border: 0; background: none; box-shadow: none; border-radius: 0; overflow: visible;
+      margin-bottom: 4px;
+    }
+    table, tbody, tr, th, td { display: block; width: auto; }
+    table { table-layout: auto; font-size: .93rem; }
+    thead { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip-path: inset(50%); }
+    caption { display: none; }
+    tbody tr, tbody tr:nth-child(even) {
+      background: var(--kart);
+      border: 1px solid var(--ayirici);
+      border-radius: 14px;
+      box-shadow: var(--golge);
+      padding: 2px 16px 10px;
+      margin: 0 0 14px;
+    }
+    tbody th, tbody td { padding: 12px 0; border-bottom: 1px solid var(--ayirici); }
+    tbody th { font-size: 1rem; padding-top: 14px; }
+    tbody tr:last-child th, tbody tr:last-child td { border-bottom: 1px solid var(--ayirici); }
+    tbody tr > td:last-child, tbody tr:last-child > td:last-child { border-bottom: 0; }
+    tbody td::before {
+      content: attr(data-etiket);
+      display: block;
+      margin-bottom: 3px;
+      font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+      color: var(--silik);
+    }
+  }
+
+  /* ---------- Etiketler ---------- */
+  .etiket {
+    display: inline-block;
+    font-size: .74rem; font-weight: 700; letter-spacing: .03em;
+    padding: 2px 9px; border-radius: 999px;
+    border: 1px solid currentColor;
+    white-space: nowrap;
+  }
+  .etiket.yesil { color: var(--arti); }
+  .etiket.kirmizi { color: var(--eksi); }
+  .etiket.mor { color: var(--vurgu); }
+
+  /* E-posta maskeleme + kopyala */
+  .eposta-satir { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+  .dugme {
+    font: inherit; font-size: .92rem; font-weight: 650; line-height: 1.4;
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 9px 18px; border-radius: 999px;
+    text-decoration: none; cursor: pointer;
+    border: 1px solid transparent;
+  }
+  .dugme svg { width: 16px; height: 16px; flex: none; }
+  .dugme-birincil { background: var(--vurgu); color: #FFFFFF; border-color: var(--vurgu); }
+  .dugme-birincil:hover { background: var(--mor-hover); color: #FFFFFF; border-color: var(--mor-hover); }
+  .dugme-ikincil { background: var(--mor-yumusak); color: var(--vurgu); border-color: var(--kenarlik); }
+  .dugme-ikincil:hover { background: var(--kart); color: var(--vurgu); }
+  .dugme:focus-visible { outline: 2px solid var(--vurgu); outline-offset: 3px; }
+  .eposta-durum { font-size: .85rem; font-weight: 650; color: var(--arti); }
+  .eposta-aciklama { font-size: .85rem; color: var(--silik); margin-bottom: 0; }
+  .yanit-suresi {
+    background: var(--yuzey);
+    border: 1px dashed var(--kenarlik);
+    border-radius: 12px;
+    padding: 12px 16px;
+  }
+  footer .eposta-gonder { color: var(--silik); text-decoration: underline; }
+  footer .eposta-gonder:hover { color: var(--vurgu); }
+
+  .haklar { list-style: none; padding: 0; }
+  .haklar li {
+    padding-left: 30px; position: relative; margin-bottom: 12px;
+  }
+  .haklar li::before {
+    content: ""; position: absolute; left: 0; top: .55em;
+    width: 14px; height: 3px; border-radius: 2px; background: var(--vurgu);
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    border-top: 1px solid var(--ayirici);
+    background: var(--yuzey);
+    padding: 28px 20px 40px;
+    text-align: center;
+  }
+  footer .ic {
+    max-width: 1120px; margin: 0 auto;
+    color: var(--silik); font-size: .87rem;
+    display: flex; align-items: center; justify-content: center;
+    gap: 10px; flex-wrap: wrap;
+  }
+  footer .ic svg { width: 22px; height: 22px; flex: none; }
+
+  @media (max-width: 420px) {
+    body { font-size: 16px; }
+    .kart { padding: 18px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<a class="atla" href="#giris">İçeriğe atla</a>
+
+<header class="hero">
+  <svg class="hero-motif" aria-hidden="true" viewBox="0 0 1200 520" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <radialGradient id="aura1" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#C4B5FD" stop-opacity=".38"/>
+        <stop offset="100%" stop-color="#C4B5FD" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="aura2" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#EDE9FE" stop-opacity=".26"/>
+        <stop offset="100%" stop-color="#EDE9FE" stop-opacity="0"/>
+      </radialGradient>
+      <g id="motif-arti">
+        <path d="M-11 0H11M0 -11V11" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" fill="none"/>
+      </g>
+      <g id="motif-eksi">
+        <path d="M-11 0H11" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" fill="none"/>
+      </g>
+    </defs>
+    <circle cx="965" cy="120" r="330" fill="url(#aura1)"/>
+    <circle cx="180" cy="470" r="290" fill="url(#aura2)"/>
+    <g opacity=".16">
+      <use href="#motif-arti" x="1055" y="88"/>
+      <use href="#motif-eksi" x="1128" y="176"/>
+      <use href="#motif-arti" x="990" y="228"/>
+      <use href="#motif-eksi" x="1092" y="300"/>
+      <use href="#motif-arti" x="1150" y="392"/>
+      <use href="#motif-eksi" x="1010" y="418"/>
+      <use href="#motif-arti" x="86" y="378"/>
+      <use href="#motif-eksi" x="164" y="452"/>
+      <use href="#motif-arti" x="252" y="330"/>
+    </g>
+  </svg>
+
+  <div class="hero-ic">
+    <div class="amblem">
+      <svg viewBox="0 0 100 100" role="img" aria-label="Artı Eksi logosu">
+        <circle cx="50" cy="50" r="49.5" fill="var(--logo-acik)"/>
+        <path d="M50 2 a48 48 0 0 1 0 96 a24 24 0 0 1 0-48 a24 24 0 0 0 0-48" fill="var(--logo-mor)"/>
+        <rect x="39.5" y="24" width="21" height="4.6" rx="1.2" fill="var(--logo-mor)"/>
+        <rect x="47.7" y="15.8" width="4.6" height="21" rx="1.2" fill="var(--logo-mor)"/>
+        <rect x="39.5" y="72" width="21" height="4" rx="1.2" fill="var(--logo-acik)"/>
+        <circle cx="50" cy="50" r="48" fill="none" stroke="var(--logo-mor)" stroke-width="3"/>
+      </svg>
+    </div>
+
+    <h1>Gizlilik Politikası</h1>
+    <p>Artı Eksi, öğretmenlerin sınıf ve öğrenci takibi için kullandığı bir uygulamadır. Bu metin, uygulamanın hangi veriyi işlediğini, bu verinin nerede durduğunu ve üzerinde nasıl tam kontrol sahibi olduğunuzu anlatır.</p>
+    <div class="rozetler">
+      <span class="rozet">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M8 2v4M16 2v4M3 10h18"/></svg>
+        Yürürlük tarihi: 19 Ağustos 2026
+      </span>
+      <span class="rozet">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+        Sunucusuz · cihazda kalan veri
+      </span>
+    </div>
+  </div>
+</header>
+
+<div class="kabuk">
+
+  <aside class="toc" aria-label="Sayfa içeriği">
+    <p class="toc-baslik">İçindekiler</p>
+    <ol>
+      <li><a href="#giris">1 · Giriş</a></li>
+      <li><a href="#kisaca">2 · Kısaca</a></li>
+      <li><a href="#veriler">3 · Topladığımız veriler</a></li>
+      <li><a href="#nerede">4 · Verinin saklandığı yer</a></li>
+      <li><a href="#ogrenci">5 · Öğrenci verileri ve çocuk gizliliği</a></li>
+      <li><a href="#ucuncu">6 · Üçüncü taraflar</a></li>
+      <li><a href="#reklam">7 · Reklam ve analitik</a></li>
+      <li><a href="#guvenlik">8 · Veri güvenliği</a></li>
+      <li><a href="#haklar">9 · Haklarınız</a></li>
+      <li><a href="#silme">10 · Veri silme</a></li>
+      <li><a href="#degisiklik">11 · Değişiklikler</a></li>
+      <li><a href="#iletisim">12 · İletişim</a></li>
+    </ol>
+  </aside>
+
+  <main>
+
+    <section id="giris">
+      <h2><span class="no">01</span> Giriş</h2>
+      <p><strong>Artı Eksi</strong>, öğretmenlerin sınıflarını, öğrencilerini, artı/eksi puanlarını, ödevlerini, proje ödevlerini, ajandalarını ve birebir derslerini takip etmesi için tasarlanmış bir mobil uygulamadır. Uygulama <strong>çevrimdışı çalışır</strong>: kaydettiğiniz her şey öncelikle kendi cihazınızda durur.</p>
+      <p>Bu gizlilik politikası; uygulamanın hangi verileri işlediğini, bu verilerin nerede saklandığını, kimlerle paylaşıldığını (ve paylaşılmadığını) ve KVKK ile GDPR kapsamındaki haklarınızı açıklar. Metin, uygulamanın kaynak kodundaki gerçek veri akışına göre yazılmıştır.</p>
+      <p><strong>Yürürlük tarihi:</strong> 19 Ağustos 2026 · <strong>Son güncelleme:</strong> 19 Ağustos 2026</p>
+      <div class="not">
+        <p><b>Önemli bir ayrım:</b> Artı Eksi'nin bir kullanıcı hesabı, giriş ekranı veya arka planda veri toplayan bir sunucusu yoktur. Bu nedenle, siz açıkça bizimle iletişime geçmediğiniz sürece verilerinize erişimimiz teknik olarak mümkün değildir.</p>
+      </div>
+    </section>
+
+    <section id="kisaca">
+      <h2><span class="no">02</span> Kısaca</h2>
+      <p>Uzun metni okumaya vaktiniz yoksa, bilmeniz gereken dört madde:</p>
+      <div class="ozet">
+        <div class="ozet-kart">
+          <div class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg></div>
+          <h3>Veriniz cihazınızda kalır</h3>
+          <p>Öğrenci listeleri, puanlar ve notlar cihazınızdaki yerel veritabanında (Hive) saklanır.</p>
+        </div>
+        <div class="ozet-kart">
+          <div class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h11a4 4 0 0 0 .6-7.95A6 6 0 0 0 6.2 9.3 4.35 4.35 0 0 0 6 18z"/><path d="M3 3l18 18"/></svg></div>
+          <h3>Bizim sunucumuz yok</h3>
+          <p>Verileriniz bize ait hiçbir sunucuya gönderilmez. İsteğe bağlı senkron, tamamen sizin kendi iCloud hesabınız üzerinden yürür.</p>
+        </div>
+        <div class="ozet-kart">
+          <div class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg></div>
+          <h3>Reklam ve izleme yok</h3>
+          <p>Reklam SDK'sı, analitik aracı, çökme raporlama servisi veya üçüncü taraf izleyici bulunmuyor.</p>
+        </div>
+        <div class="ozet-kart">
+          <div class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 4l9 6.5"/><path d="M5 10v9h14v-9"/><path d="M9.5 14.5h5"/></svg></div>
+          <h3>Satmıyoruz, paylaşmıyoruz</h3>
+          <p>Öğrenci verilerini kimseye satmayız, pazarlama amacıyla kullanmayız, veri simsarlarına aktarmayız.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="veriler">
+      <h2><span class="no">03</span> Topladığımız Veriler</h2>
+      <p>Aşağıdaki veriler <strong>sizin girişinizle</strong> oluşur. Uygulama bunları arka planda toplamaz, kendiliğinden hiçbir yere göndermez. "Toplama" ifadesi burada "uygulamanın cihazınızda kaydetmesi" anlamına gelir.</p>
+
+      <div class="tablo-sar">
+        <table>
+          <colgroup>
+            <col style="width: 27%">
+            <col style="width: 25%">
+            <col style="width: 30%">
+            <col style="width: 18%">
+          </colgroup>
+          <caption>Bu verilerin tamamı sizin girişinizle oluşur; hiçbiri arka planda toplanmaz.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Veri türü</th>
+              <th scope="col">Neden</th>
+              <th scope="col">Nerede saklanır</th>
+              <th scope="col">Ne kadar süre</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Sınıf ve öğrenci bilgileri<br><span class="etiket mor">ad soyad, okul no, isteğe bağlı cinsiyet, avatar</span></th>
+              <td data-etiket="Neden">Sınıf listelerini oluşturmak, puan ve ödev takibini kişiye bağlamak</td>
+              <td data-etiket="Nerede saklanır">Cihazda yerel veritabanı (Hive). iCloud senkronu açıksa ayrıca sizin Apple hesabınız</td>
+              <td data-etiket="Ne kadar süre">Siz silene kadar</td>
+            </tr>
+            <tr>
+              <th scope="row">Artı/eksi puan kayıtları ve davranış notu hesapları</th>
+              <td data-etiket="Neden">Puan geçmişi, karne ve istatistik ekranları</td>
+              <td data-etiket="Nerede saklanır">Cihazda yerel veritabanı</td>
+              <td data-etiket="Ne kadar süre">Siz silene kadar</td>
+            </tr>
+            <tr>
+              <th scope="row">Öğrenci notları, ödevler, proje ödevleri, rubrik değerlendirmeleri</th>
+              <td data-etiket="Neden">Ödev ve proje takibi, değerlendirme</td>
+              <td data-etiket="Nerede saklanır">Cihazda yerel veritabanı</td>
+              <td data-etiket="Ne kadar süre">Siz silene kadar</td>
+            </tr>
+            <tr>
+              <th scope="row">Birebir ders kayıtları<br><span class="etiket mor">öğrenci/veli telefon numarası, ders notları, ücret ve ödeme hareketleri</span></th>
+              <td data-etiket="Neden">Özel ders planlama, ödeme takibi, veliyle iletişim kurabilme</td>
+              <td data-etiket="Nerede saklanır">Cihazda yerel veritabanı</td>
+              <td data-etiket="Ne kadar süre">Siz silene kadar</td>
+            </tr>
+            <tr>
+              <th scope="row">Ajanda notları ve ders programı</th>
+              <td data-etiket="Neden">Günlük plan, hatırlatma bildirimleri</td>
+              <td data-etiket="Nerede saklanır">Cihazda yerel veritabanı. İzin verirseniz seçtiğiniz notun bir kopyası cihazın takvim uygulamasına yazılır</td>
+              <td data-etiket="Ne kadar süre">Siz silene kadar</td>
+            </tr>
+            <tr>
+              <th scope="row">Görseller<br><span class="etiket mor">profil fotoğrafı, ödev/belge görselleri, taranan sayfalar</span></th>
+              <td data-etiket="Neden">Öğretmen profili, ödev kanıtı, belgeden metin okuma</td>
+              <td data-etiket="Nerede saklanır">Cihazın uygulama klasöründe dosya olarak</td>
+              <td data-etiket="Ne kadar süre">Siz silene kadar</td>
+            </tr>
+            <tr>
+              <th scope="row">Uygulama tercihleri<br><span class="etiket mor">tema, dil, bildirim saatleri, widget ayarları</span></th>
+              <td data-etiket="Neden">Uygulamayı sizin istediğiniz gibi çalıştırmak</td>
+              <td data-etiket="Nerede saklanır">Cihazda yerel veritabanı</td>
+              <td data-etiket="Ne kadar süre">Uygulama silinene kadar</td>
+            </tr>
+            <tr>
+              <th scope="row">Şifreleme anahtarları<br><span class="etiket mor">cihaz yedek anahtarı</span></th>
+              <td data-etiket="Neden">Otomatik yedekleri ve senkron dosyasını şifrelemek</td>
+              <td data-etiket="Nerede saklanır">iOS Keychain / Android Keystore (işletim sisteminin güvenli deposu)</td>
+              <td data-etiket="Ne kadar süre">Uygulama silinene kadar</td>
+            </tr>
+            <tr>
+              <th scope="row">Dışa aktardığınız dosyalar<br><span class="etiket mor">PDF karne, Excel listesi, yedek dosyası, QR görseli</span></th>
+              <td data-etiket="Neden">Yazdırma, paylaşma, başka cihaza taşıma</td>
+              <td data-etiket="Nerede saklanır">Sizin seçtiğiniz konum veya paylaştığınız uygulama</td>
+              <td data-etiket="Ne kadar süre">Tamamen sizin kontrolünüzde</td>
+            </tr>
+            <tr>
+              <th scope="row">Bize Ulaşın formu içeriği<br><span class="etiket mor">ad soyad, e-posta, mesaj, varsa ekran görüntüsü</span></th>
+              <td data-etiket="Neden">Talebinizi yanıtlamak</td>
+              <td data-etiket="Nerede saklanır">Formspree sunucuları üzerinden bize e-posta olarak ulaşır</td>
+              <td data-etiket="Ne kadar süre">Talebiniz kapandıktan sonra makul bir süre (en fazla 12 ay)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Toplamadıklarımız</h3>
+      <p>Şeffaflık için, uygulamanın <strong>işlemediği</strong> veriler:</p>
+      <ul>
+        <li>Konum bilgisi, GPS verisi veya IP tabanlı konum</li>
+        <li>Reklam kimliği (IDFA / GAID) veya cihaz parmak izi</li>
+        <li>Rehberinizin bir kopyası (rehberden yalnızca sizin seçtiğiniz kişinin adı ve telefonu forma dolar; liste kopyalanmaz)</li>
+        <li>Kullanım analitiği, ekran görüntüleme sayaçları, oturum kayıtları</li>
+        <li>Çökme raporları veya teşhis verisi</li>
+        <li>Kullanıcı hesabı, parola, e-posta adresi (uygulamanın hesap sistemi yoktur)</li>
+        <li>Mikrofon kaydı</li>
+      </ul>
+
+      <h3>Cihaz izinleri</h3>
+      <p>Uygulama şu izinleri ister · her biri yalnızca ilgili özelliği kullandığınızda devreye girer, reddetmeniz uygulamanın geri kalanını etkilemez:</p>
+      <ul>
+        <li><strong>Kamera:</strong> belge/ödev fotoğrafı çekmek ve sınıf listesi QR kodunu okumak için.</li>
+        <li><strong>Fotoğraflar:</strong> profil fotoğrafı veya ödev görseli seçmek, oluşturduğunuz QR kodunu galeriye kaydetmek için.</li>
+        <li><strong>Rehber (iOS):</strong> veli veya öğrenci telefon numarasını elle yazmak yerine rehberden seçmek için.</li>
+        <li><strong>Takvim:</strong> ajanda notlarınızı cihazınızın takvimine eklemek için.</li>
+        <li><strong>Bildirimler:</strong> ders, ödev ve ajanda hatırlatmaları için.</li>
+        <li><strong>İnternet:</strong> yalnızca iCloud senkronu, sistem servislerinin kendi modül indirmeleri ve sizin başlattığınız paylaşım işlemleri için. Uygulama bize ait bir adrese hiçbir istek göndermez.</li>
+      </ul>
+    </section>
+
+    <section id="nerede">
+      <h2><span class="no">04</span> Verinin Saklandığı Yer</h2>
+
+      <h3>1. Cihazınız (varsayılan ve tek zorunlu yer)</h3>
+      <p>Tüm kayıtlar cihazınızda <strong>Hive</strong> adlı yerel veritabanı dosyalarında tutulur. Görseller uygulamanın kendi klasöründe dosya olarak durur. Bu veriler uygulamanın korumalı alanındadır; başka uygulamalar okuyamaz.</p>
+      <p>Android tarafında uygulama, işletim sisteminin otomatik yedekleme ve cihaz aktarma özelliğinin dışında bırakılmıştır (<code>allowBackup=false</code>). Yani öğrenci verisi, siz istemeden Google hesabınızın yedeğine kopyalanmaz. Veri taşımak istediğinizde uygulamanın kendi şifreli yedek dosyasını kullanırsınız.</p>
+
+      <h3>2. Kendi iCloud hesabınız (isteğe bağlı, varsayılan olarak kapalı)</h3>
+      <p>iOS'ta senkronizasyonu açarsanız verileriniz <strong>sizin Apple kimliğinize ait özel (private) iCloud alanına</strong> yazılır. Bu alan Apple'ın CloudKit private veritabanı ve uygulamaya özel iCloud konteyneridir. Amaç, aynı Apple hesabındaki iPhone ve iPad'inizin aynı verileri görmesidir.</p>
+      <ul>
+        <li>Bu senkron <strong>varsayılan olarak kapalıdır</strong>; siz Ayarlar'dan açana kadar hiçbir şey iCloud'a gitmez.</li>
+        <li>Yazılan senkron dosyası <strong>şifrelenmiş</strong> olarak saklanır.</li>
+        <li>Veriler Apple'ın altyapısında, sizin hesabınızın özel alanında durur. Biz bu alana erişemeyiz; Apple da içeriği uygulamanın dışındaki taraflarla paylaşmaz.</li>
+      </ul>
+
+      <div class="not olumlu">
+        <p><b>Net olalım:</b> Artı Eksi'nin bir arka uç sunucusu, veritabanı veya API'si yoktur. Öğrenci isimleri, puanlar, notlar, telefon numaraları ve fotoğraflar <b>bize hiçbir zaman ulaşmaz</b>. Tek istisna, aşağıda anlatılan ve tamamen sizin başlattığınız "Bize Ulaşın" formudur.</p>
+      </div>
+    </section>
+
+    <section id="ogrenci">
+      <h2><span class="no">05</span> Öğrenci Verileri ve Çocuk Gizliliği</h2>
+      <p>Artı Eksi, doğası gereği <strong>çocuklara ait kişisel veri</strong> içerir: isim, okul numarası, davranış notu, ödev durumu, kimi durumda veli telefonu. Bu veriye özel bir hassasiyetle yaklaşıyoruz.</p>
+
+      <h3>Roller: veri sorumlusu kimdir?</h3>
+      <p>KVKK ve GDPR terimleriyle:</p>
+      <ul>
+        <li><strong>Veri sorumlusu (data controller):</strong> uygulamayı kullanan <strong>öğretmen</strong> ve bağlı olduğu <strong>okul/kurum</strong>. Hangi öğrencinin hangi verisinin girileceğine, ne kadar süre tutulacağına ve kiminle paylaşılacağına siz karar verirsiniz.</li>
+        <li><strong>Veri işleyen (data processor) konumundaki araç:</strong> uygulamanın kendisi. Yazılım, sizin talimatınızla veriyi cihazınızda işleyen bir araçtır; geliştirici olarak biz bu veriye erişmez, kopyalamaz ve kendi amaçlarımızla kullanmayız.</li>
+      </ul>
+
+      <h3>Öğretmenin sorumlulukları</h3>
+      <ul>
+        <li>Öğrenci verisini işlemek için okulunuzun politikasına ve varsa velilerin bilgilendirilmesi/onay süreçlerine uyun.</li>
+        <li>Yalnızca <strong>gerçekten ihtiyacınız olan</strong> veriyi girin. Örneğin veli telefonu gerekmiyorsa boş bırakın; okul numarası yeterliyse tam ad yerine numarayı kullanmayı düşünebilirsiniz.</li>
+        <li>Eğitim yılı bittiğinde veya öğrenci okuldan ayrıldığında kayıtları silin ya da arşivleyin.</li>
+        <li>Cihazınızı ekran kilidiyle koruyun; sınıf listesi ve karne PDF'lerini paylaşırken alıcıyı doğrulayın.</li>
+      </ul>
+
+      <h3>Çocuklardan doğrudan veri toplamıyoruz</h3>
+      <p>Uygulama çocuklara yönelik değildir ve çocuklar tarafından kullanılmak üzere tasarlanmamıştır. Öğrenciler uygulamaya kayıt olmaz, hesap açmaz, veri girmez. Girilen tüm veriyi <strong>öğretmen</strong> girer. Çocuklardan doğrudan hiçbir bilgi toplamadığımız ve bu veriyi hiçbir sunucuya aktarmadığımız için, ABD'deki COPPA düzenlemesi anlamında çocuklardan çevrimiçi bilgi toplayan bir hizmet değiliz.</p>
+      <p>Bir öğrenciye ait verinin uygulamada bulunmasını istemeyen veli veya vasiler, öncelikle sınıf öğretmeniyle iletişime geçmelidir; kaydı silme yetkisi öğretmendedir ve silme işlemi uygulama içinden saniyeler sürer.</p>
+    </section>
+
+    <section id="ucuncu">
+      <h2><span class="no">06</span> Üçüncü Taraflar</h2>
+      <p>Uygulamanın veriyle temas eden üçüncü taraf listesi kısadır ve her ikisi de <strong>yalnızca siz tetiklediğinizde</strong> devreye girer.</p>
+
+      <div class="kart">
+        <h3 style="margin-top:0">Apple iCloud · senkron ve yedek</h3>
+        <p>iOS'ta senkronu açtığınızda verileriniz sizin Apple hesabınızın özel iCloud alanına şifreli olarak yazılır. Bu, Apple ile sizin aranızdaki bir ilişkidir; biz taraf değiliz ve bu alana erişemeyiz. Apple'ın veri işleme koşulları için iCloud hesabınızın gizlilik ayarlarına bakabilirsiniz.</p>
+      </div>
+
+      <div class="kart">
+        <h3 style="margin-top:0">Formspree · iletişim formu</h3>
+        <p>Uygulama içindeki <strong>"Bize Ulaşın"</strong> formu, <a href="https://formspree.io" target="_blank" rel="noopener noreferrer">Formspree</a> (https://formspree.io) altyapısı üzerinden çalışır. Formu gönderdiğinizde girdiğiniz <strong>ad soyad, e-posta adresi, mesaj metni ve varsa eklediğiniz ekran görüntüsü</strong> Formspree sunucularına iletilir ve oradan bize e-posta olarak ulaşır.</p>
+        <p>Bu veriler <strong>yalnızca talebinizi yanıtlamak</strong> için kullanılır. Pazarlama amacıyla kullanılmaz, bülten listesine eklenmez, üçüncü taraflara satılmaz veya devredilmez. Formspree'nin kendi gizlilik politikasını <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener noreferrer">https://formspree.io/legal/privacy-policy/</a> adresinden inceleyebilirsiniz.</p>
+        <div class="not uyari" style="margin-bottom:0">
+          <p><b>Ekran görüntüsü göndermeden önce:</b> Görselde öğrenci adı, okul numarası, veli telefon numarası veya not bilgisi görünüyorsa bunları <b>karalayarak gizleyin</b>. Bize sorunu anlatmak için çoğu zaman ekranın yalnızca bir bölümü yeterlidir; hassas öğrenci bilgisi göndermeniz gerekmez.</p>
+        </div>
+      </div>
+
+      <h3>Cihaz üzerinde çalışan sistem bileşenleri</h3>
+      <p>Aşağıdakiler üçüncü taraf <em>veri alıcısı</em> değildir; işletim sisteminin cihaz üzerinde çalışan bileşenleridir ve içerik dışarı çıkmaz:</p>
+      <ul>
+        <li><strong>Metin tanıma (OCR):</strong> iOS'ta Apple Vision, Android'de Google ML Kit metin tanıma. Taradığınız belge <strong>cihazda</strong> işlenir, bir sunucuya yüklenmez.</li>
+        <li><strong>QR okuma:</strong> Android'de ML Kit barkod tarayıcı kullanılır. Bu modül gerektiğinde Google Play Hizmetleri üzerinden cihaza indirilebilir; okunan içerik cihazdan çıkmaz.</li>
+        <li><strong>Cihaz takvimi ve bildirimler:</strong> yerel sistem servisleri.</li>
+      </ul>
+
+      <h3>Sizin başlattığınız paylaşımlar</h3>
+      <p>Bir karneyi PDF olarak paylaştığınızda, sınıf listesini Excel'e aktardığınızda, QR kodu gönderdiğinizde veya bir ödevi WhatsApp gibi bir uygulamayla paylaştığınızda, veri seçtiğiniz uygulamaya geçer ve bundan sonrası <strong>o uygulamanın gizlilik politikasına</strong> tabidir. Paylaşımı siz başlatırsınız; uygulama kendiliğinden hiçbir şey göndermez.</p>
+    </section>
+
+    <section id="reklam">
+      <h2><span class="no">07</span> Reklam ve Analitik</h2>
+      <div class="not olumlu">
+        <p><b>Reklam yok. Analitik yok. Çökme raporlama yok. İzleme yok.</b></p>
+      </div>
+      <p>Uygulamanın kaynak kodunda ve bağımlılık listesinde herhangi bir reklam ağı (AdMob vb.), analitik aracı (Firebase Analytics, Google Analytics, Mixpanel, PostHog vb.) veya çökme raporlama servisi (Crashlytics, Sentry vb.) <strong>bulunmamaktadır</strong>.</p>
+      <ul>
+        <li>Hangi ekranı açtığınız, uygulamayı ne sıklıkla kullandığınız veya hangi özelliği tercih ettiğiniz hiçbir yerde ölçülmez.</li>
+        <li>Reklam kimliğiniz okunmaz; profil çıkarma veya davranışsal hedefleme yapılmaz.</li>
+        <li>Uygulama çökerse bu bize otomatik olarak bildirilmez. Bir sorunu yalnızca siz "Bize Ulaşın" formuyla anlatırsanız öğrenebiliriz.</li>
+      </ul>
+      <p>Uygulamanın internet izni istemesinin sebebi izleme değil; iCloud senkronu, sistem bileşenlerinin kendi modül indirmeleri ve sizin başlattığınız paylaşım işlemleridir.</p>
+    </section>
+
+    <section id="guvenlik">
+      <h2><span class="no">08</span> Veri Güvenliği</h2>
+
+      <h3>Uygulamanın yaptıkları</h3>
+      <ul>
+        <li><strong>Yedekler şifrelenir.</strong> Uygulamanın oluşturduğu yedek dosyaları AES-GCM-256 ile şifrelenir. Paylaşılabilir yedeklerde anahtar, sizin belirlediğiniz paroladan veya uygulamanın ürettiği kurtarma anahtarından PBKDF2-SHA256 ile türetilir.</li>
+        <li><strong>Yedek parolası sizindir.</strong> Parolayı siz seçersiniz (8 ile 12 karakter arası) ve biz onu bilmeyiz. Parolayı kaybederseniz o yedek dosyası <strong>açılamaz</strong>; bizim de kurtarma imkânımız yoktur.</li>
+        <li><strong>Cihaz anahtarı güvenli depoda.</strong> Sessiz otomatik yedeklerde kullanılan cihaz anahtarı iOS Keychain / Android Keystore içinde saklanır, uygulama dosyalarının içinde düz metin olarak durmaz.</li>
+        <li><strong>iCloud senkron dosyası şifreli yazılır</strong> ve yalnızca sizin Apple hesabınızın özel alanında bulunur.</li>
+        <li><strong>İşletim sistemi yedeğinden hariç tutma.</strong> Android'de <code>allowBackup=false</code> ile öğrenci verisi cihaz aktarım ve otomatik bulut yedeklerine dahil edilmez.</li>
+        <li><strong>Veri korumalı alanda.</strong> Uygulamanın veritabanı ve görselleri, işletim sisteminin diğer uygulamalardan izole ettiği alanda tutulur.</li>
+      </ul>
+
+      <h3>Sizin yapmanız gerekenler</h3>
+      <p>Veri cihazınızda durduğu için güvenliğin büyük bölümü cihaz güvenliğinizdir:</p>
+      <ul>
+        <li>Cihazınızda mutlaka <strong>ekran kilidi</strong> (parola, Face ID, parmak izi) kullanın.</li>
+        <li>İşletim sistemi güncellemelerini yükleyin.</li>
+        <li>Yedek dosyalarını ve dışa aktardığınız PDF/Excel çıktılarını rastgele yerlerde bırakmayın. <strong>Dışa aktarılan PDF ve Excel dosyaları şifresizdir</strong>; paylaşırken alıcıyı doğrulayın.</li>
+        <li>Yedek parolanızı güvenli bir yerde saklayın.</li>
+        <li>Cihazınızı bir başkasına devrederken veya satarken önce uygulama içinden tüm veriyi silin.</li>
+      </ul>
+      <p>Hiçbir sistem yüzde yüz güvenli değildir; ancak veriyi merkezi bir sunucuda toplamayarak, sızıntı riskini kaynağında ortadan kaldıran bir mimari tercih ettik.</p>
+    </section>
+
+    <section id="haklar">
+      <h2><span class="no">09</span> Haklarınız</h2>
+      <p>KVKK'nın 11. maddesi ve GDPR kapsamında aşağıdaki haklara sahipsiniz. Artı Eksi'nin özel durumu şudur: <strong>veriniz zaten sizin elinizde</strong>, dolayısıyla bu hakların çoğunu bizden talep etmeye gerek kalmadan doğrudan uygulama içinden kullanabilirsiniz.</p>
+
+      <ul class="haklar">
+        <li><strong>Erişim ve bilgi alma:</strong> Kayıtlı tüm veriyi uygulama ekranlarından görebilir, ayrıca yedek dosyası, Excel listesi veya PDF karne olarak dışa aktarabilirsiniz.</li>
+        <li><strong>Düzeltme:</strong> Yanlış veya eksik bir kaydı ilgili ekrandan düzenleyerek anında düzeltebilirsiniz.</li>
+        <li><strong>Silme (unutulma hakkı):</strong> Tek bir öğrenciyi, bir sınıfı ya da <strong>Ayarlar &gt; Tüm veriyi sil</strong> ile her şeyi kalıcı olarak silebilirsiniz. Ayrıntılar için bir alttaki bölüme bakın.</li>
+        <li><strong>Veri taşınabilirliği:</strong> Şifreli yedek dosyası ile verinizi başka bir cihaza taşıyabilir, Excel/PDF dışa aktarımıyla makine tarafından okunabilir kopyasını alabilirsiniz.</li>
+        <li><strong>İşlemeye itiraz ve kısıtlama:</strong> iCloud senkronunu kapatarak, izinleri reddederek veya uygulamayı kaldırarak işlemeyi durdurabilirsiniz.</li>
+        <li><strong>Şikâyet hakkı:</strong> Türkiye'de Kişisel Verileri Koruma Kurumu'na (KVKK), AB'de kendi ülkenizin veri koruma otoritesine başvurabilirsiniz.</li>
+      </ul>
+
+      <div class="not">
+        <p><b>Bir noktayı vurgulayalım:</b> Bize "verilerimi gönder" veya "verilerimi sil" talebiyle başvurmanız halinde, elimizde <b>hiçbir veriniz olmadığı</b> için gönderebileceğimiz ya da silebileceğimiz bir kayıt bulunmaz. Bu bir kaçamak değil, mimarinin doğal sonucudur: veri hiçbir zaman bize ulaşmaz. İstisna, bize Bize Ulaşın formuyla gönderdiğiniz mesajlardır; onların silinmesini talep edebilirsiniz.</p>
+      </div>
+    </section>
+
+    <section id="silme">
+      <h2><span class="no">10</span> Veri Silme</h2>
+
+      <h3>1. Uygulama içinden silme</h3>
+      <p><strong>Ayarlar &gt; Tüm veriyi sil</strong> adımı; sınıfları, öğrencileri, puan kayıtlarını, notları, ödev ve proje ödevlerini, ajandayı, birebir ders modülünün tüm kayıtlarını, profil fotoğrafını, yerel yedekleri ve dışa aktarma dosyalarını cihazdan kalıcı olarak siler. İşlem geri alınamaz.</p>
+      <p>Daha dar kapsamlı silmeler için tek bir öğrenciyi veya sınıfı kendi ekranından silebilirsiniz.</p>
+
+      <h3>2. iCloud kopyasını ayrıca silmek gerekir</h3>
+      <div class="not uyari">
+        <p><b>Dikkat:</b> iCloud senkronunu kullandıysanız, cihazdaki veriyi silmek iCloud'daki kopyayı tek başına kaldırmaya yetmez. Üstelik <b>senkron açık kalırsa</b>, bulutta duran kopya bir sonraki eşitlemede geri gelebilir.</p>
+      </div>
+      <p>Doğru sıra:</p>
+      <ul>
+        <li><strong>Önce</strong> Ayarlar'dan iCloud senkronunu <strong>kapatın</strong>.</li>
+        <li><strong>Sonra</strong> uygulamadaki "iCloud yedeğini sil" işlemini çalıştırın.</li>
+        <li>Ardından cihazdaki veriyi silin.</li>
+      </ul>
+      <p>Ayrıca uygulamayı cihazdan kaldırmak, iCloud'daki kopyayı otomatik olarak silmez. Aynı Apple hesabındaki başka bir cihazda uygulama kuruluysa veri orada durmaya devam eder.</p>
+
+      <h3>3. Paylaştığınız dosyalar</h3>
+      <p>Daha önce e-posta, mesajlaşma uygulaması veya bulut sürücüyle paylaştığınız PDF, Excel ve yedek dosyaları uygulamanın erişim alanı dışındadır. Onları ilgili yerden ayrıca silmeniz gerekir.</p>
+    </section>
+
+    <section id="degisiklik">
+      <h2><span class="no">11</span> Değişiklikler</h2>
+      <p>Uygulamaya yeni bir özellik eklendiğinde veya veri akışında bir değişiklik olduğunda bu politikayı güncelleyebiliriz. Güncellemede:</p>
+      <ul>
+        <li>Sayfanın altındaki <strong>son güncelleme tarihi</strong> değişir.</li>
+        <li>Veri işleme biçiminde <strong>esaslı</strong> bir değişiklik olursa (örneğin yeni bir üçüncü taraf servis eklenmesi), bunu uygulama içinde de görünür şekilde duyururuz.</li>
+        <li>Geçmişte topladığımız veriyi, sizi bilgilendirmeden yeni ve uyumsuz bir amaçla kullanmayız.</li>
+      </ul>
+      <p>Uygulamayı kullanmaya devam etmeniz, yürürlükteki politikayı kabul ettiğiniz anlamına gelir. Politikayı zaman zaman gözden geçirmenizi öneririz.</p>
+    </section>
+
+    <section id="iletisim">
+      <h2><span class="no">12</span> İletişim</h2>
+      <p>Gizlilikle ilgili sorularınız, talepleriniz veya bir sorunu bildirmek için:</p>
+      <div class="kart">
+        <h3 style="margin-top:0">1 · Uygulama içinden</h3>
+        <p><strong>Ayarlar &gt; Bize Ulaşın</strong> formunu kullanabilirsiniz. Form, 6. bölümde anlatıldığı gibi <strong>Formspree</strong> üzerinden bize e-posta olarak ulaşır. Ekran görüntüsü eklerken <strong>öğrenci bilgilerini gizlemeyi</strong> unutmayın.</p>
+
+        <h3>2 · E-posta</h3>
+        <p class="eposta-satir">
+          <a class="dugme dugme-birincil eposta-gonder" href="#iletisim" aria-label="E-posta gönder" rel="nofollow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 7l9 6 9-6"/></svg>
+            E-posta gönder
+          </a>
+          <button type="button" class="dugme dugme-ikincil eposta-kopyala" aria-label="E-posta adresini panoya kopyala">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2.5"/><path d="M15 5.5A2.5 2.5 0 0 0 12.5 3h-7A2.5 2.5 0 0 0 3 5.5v7A2.5 2.5 0 0 0 5.5 15"/></svg>
+            Adresi kopyala
+          </button>
+          <span class="eposta-durum" role="status" aria-live="polite"></span>
+        </p>
+        <p class="eposta-aciklama">E-posta adresimiz istenmeyen posta koruması nedeniyle sayfada gösterilmez · düğmeye basınca e-posta uygulamanız hazır adresle açılır, "Adresi kopyala" ise adresi doğrudan panonuza alır.</p>
+        <noscript><p class="eposta-aciklama">E-posta adresimizi görebilmek için JavaScript gerekir · alternatif olarak uygulama içindeki <strong>Ayarlar &gt; Bize Ulaşın</strong> formunu kullanabilirsiniz.</p></noscript>
+
+        <h3>3 · Yanıt süresi</h3>
+        <p class="yanit-suresi" style="margin-bottom:0"><span class="etiket yesil">En geç 30 gün</span> Talebinizi en geç 30 gün içinde yanıtlamayı hedefliyoruz.</p>
+      </div>
+      <p>Bir veli veya vasi olarak çocuğunuza ait bir kaydın silinmesini istiyorsanız, veri sorumlusu öğretmen ve okul olduğu için önce <strong>sınıf öğretmeniyle</strong> iletişime geçin. Gerekirse süreçte size yardımcı olmaktan memnuniyet duyarız.</p>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <div class="ic">
+    <svg viewBox="0 0 100 100" aria-hidden="true">
+      <circle cx="50" cy="50" r="49.5" fill="var(--logo-acik)"/>
+      <path d="M50 2 a48 48 0 0 1 0 96 a24 24 0 0 1 0-48 a24 24 0 0 0 0-48" fill="var(--logo-mor)"/>
+      <rect x="39.5" y="24" width="21" height="4.6" rx="1.2" fill="var(--logo-mor)"/>
+      <rect x="47.7" y="15.8" width="4.6" height="21" rx="1.2" fill="var(--logo-mor)"/>
+      <rect x="39.5" y="72" width="21" height="4" rx="1.2" fill="var(--logo-acik)"/>
+      <circle cx="50" cy="50" r="48" fill="none" stroke="var(--logo-mor)" stroke-width="3"/>
+    </svg>
+    <span>Artı Eksi · Gizlilik Politikası · Son güncelleme 19 Ağustos 2026 · <a class="eposta-gonder" href="#iletisim" aria-label="E-posta gönder" rel="nofollow">E-posta</a></span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var baglar = Array.prototype.slice.call(document.querySelectorAll('.toc a'));
+  if (!baglar.length || !('IntersectionObserver' in window)) return;
+  var harita = {};
+  var bolumler = [];
+  baglar.forEach(function (b) {
+    var kimlik = b.getAttribute('href').slice(1);
+    var bolum = document.getElementById(kimlik);
+    if (!bolum) return;
+    harita[kimlik] = b;
+    bolumler.push(bolum);
+  });
+  var gorunenler = {};
+  var gozlemci = new IntersectionObserver(function (girisler) {
+    girisler.forEach(function (g) { gorunenler[g.target.id] = g.isIntersecting; });
+    var etkin = null;
+    for (var i = 0; i < bolumler.length; i++) {
+      if (gorunenler[bolumler[i].id]) { etkin = bolumler[i].id; break; }
+    }
+    if (!etkin) return;
+    baglar.forEach(function (b) { b.classList.remove('etkin'); b.removeAttribute('aria-current'); });
+    harita[etkin].classList.add('etkin');
+    harita[etkin].setAttribute('aria-current', 'true');
+  }, { rootMargin: '-15% 0px -65% 0px', threshold: 0 });
+  bolumler.forEach(function (b) { gozlemci.observe(b); });
+})();
+
+// E-posta maskeleme: adres kaynakta yok, calisma aninda karakter kodlarindan kurulur.
+(function () {
+  var kod = [100, 97, 108, 103, 97, 108, 105, 99, 101, 109, 97, 108, 64,
+             103, 109, 97, 105, 108, 46, 99, 111, 109];
+  function adres() {
+    var m = '';
+    for (var i = 0; i < kod.length; i++) { m += String.fromCharCode(kod[i]); }
+    return m;
+  }
+  var dizi = Array.prototype.forEach;
+  // Adres hicbir zaman DOM'a yazilmaz; yalnizca href, etkilesim aninda kurulur.
+  dizi.call(document.querySelectorAll('a.eposta-gonder'), function (a) {
+    var kur = function () { a.setAttribute('href', 'mailto:' + adres()); };
+    ['focus', 'mouseenter', 'mousedown', 'touchstart', 'keydown'].forEach(function (olay) {
+      a.addEventListener(olay, kur);
+    });
+  });
+  dizi.call(document.querySelectorAll('.eposta-kopyala'), function (d) {
+    d.addEventListener('click', function () {
+      if (!navigator.clipboard || !navigator.clipboard.writeText) return;
+      var durum = d.parentNode.querySelector('.eposta-durum');
+      navigator.clipboard.writeText(adres()).then(function () {
+        if (!durum) return;
+        durum.textContent = 'Kopyalandı';
+        setTimeout(function () { durum.textContent = ''; }, 2200);
+      }, function () {});
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
