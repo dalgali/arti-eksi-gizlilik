@@ -391,6 +391,16 @@
   footer .eposta-gonder { color: var(--silik); text-decoration: underline; }
   footer .eposta-gonder:hover { color: var(--vurgu); }
 
+  code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    font-size: .88em;
+    background: var(--mor-yumusak);
+    border: 1px solid var(--ayirici);
+    border-radius: 6px;
+    padding: 1px 6px;
+    overflow-wrap: break-word;
+  }
+
   .haklar { list-style: none; padding: 0; }
   .haklar li {
     padding-left: 30px; position: relative; margin-bottom: 12px;
@@ -519,7 +529,7 @@
 
     <section id="kisaca">
       <h2><span class="no">02</span> Kısaca</h2>
-      <p>Uzun metni okumaya vaktiniz yoksa, bilmeniz gereken dört madde:</p>
+      <p>Uzun metni okumaya vaktiniz yoksa bilmeniz gereken dört madde:</p>
       <div class="ozet">
         <div class="ozet-kart">
           <div class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg></div>
@@ -529,7 +539,7 @@
         <div class="ozet-kart">
           <div class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h11a4 4 0 0 0 .6-7.95A6 6 0 0 0 6.2 9.3 4.35 4.35 0 0 0 6 18z"/><path d="M3 3l18 18"/></svg></div>
           <h3>Bizim sunucumuz yok</h3>
-          <p>Verileriniz bize ait hiçbir sunucuya gönderilmez. İsteğe bağlı senkron, tamamen sizin kendi iCloud hesabınız üzerinden yürür.</p>
+          <p>Uygulamanın arka uç sunucusu yoktur. Öğrenci verileri bize gönderilmez, isteğe bağlı senkron sizin kendi iCloud hesabınız üzerinden yürür.</p>
         </div>
         <div class="ozet-kart">
           <div class="ikon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg></div>
@@ -546,7 +556,7 @@
 
     <section id="veriler">
       <h2><span class="no">03</span> Topladığımız Veriler</h2>
-      <p>Aşağıdaki veriler <strong>sizin girişinizle</strong> oluşur. Uygulama bunları arka planda toplamaz, kendiliğinden hiçbir yere göndermez. "Toplama" ifadesi burada "uygulamanın cihazınızda kaydetmesi" anlamına gelir.</p>
+      <p>Aşağıdaki veriler <strong>sizin girişinizle</strong> oluşur. Uygulama bunları arka planda toplamaz, kendiliğinden hiçbir yere göndermez. “Toplama” ifadesi burada “uygulamanın cihazınızda kaydetmesi” anlamına gelir.</p>
 
       <div class="tablo-sar">
         <table>
@@ -556,7 +566,7 @@
             <col style="width: 30%">
             <col style="width: 18%">
           </colgroup>
-          <caption>Bu verilerin tamamı sizin girişinizle oluşur; hiçbiri arka planda toplanmaz.</caption>
+          <caption>Bu verilerin tamamı sizin girişinizle oluşur. Hiçbiri arka planda toplanmaz.</caption>
           <thead>
             <tr>
               <th scope="col">Veri türü</th>
@@ -627,10 +637,10 @@
               <td data-etiket="Ne kadar süre">Talebiniz kapandıktan sonra makul bir süre (en fazla 12 ay)</td>
             </tr>
             <tr>
-              <th scope="row">Talebinize eklediğiniz ekran görüntüleri<br><span class="etiket mor">Formspree'ye gitmez</span></th>
+              <th scope="row">Talebinize eklediğiniz ekran görüntüleri<br><span class="etiket mor">Cloudinary'ye yüklenir</span></th>
               <td data-etiket="Neden">Sorunu görsel olarak anlatabilmeniz</td>
-              <td data-etiket="Nerede saklanır">Cihazınızın paylaşım sayfasıyla, sizin seçtiğiniz uygulama üzerinden gönderilir; uygulama hiçbir sunucuya yüklemez</td>
-              <td data-etiket="Ne kadar süre">Seçtiğiniz uygulamanın kendi politikasına tabidir</td>
+              <td data-etiket="Nerede saklanır">Cloudinary sunucularına HTTPS ile yüklenir. Formspree mesajına dosya değil, yalnızca görselin adresi eklenir</td>
+              <td data-etiket="Ne kadar süre">Talebiniz kapandıktan sonra makul bir süre (en fazla 12 ay)</td>
             </tr>
           </tbody>
         </table>
@@ -641,7 +651,7 @@
       <ul>
         <li>Konum bilgisi, GPS verisi veya IP tabanlı konum</li>
         <li>Reklam kimliği (IDFA / GAID) veya cihaz parmak izi</li>
-        <li>Rehberinizin bir kopyası (rehberden yalnızca sizin seçtiğiniz kişinin adı ve telefonu forma dolar; liste kopyalanmaz)</li>
+        <li>Rehberinizin bir kopyası (rehberden yalnızca sizin seçtiğiniz kişinin adı ve telefonu forma dolar, liste kopyalanmaz)</li>
         <li>Kullanım analitiği, ekran görüntüleme sayaçları, oturum kayıtları</li>
         <li>Çökme raporları veya teşhis verisi</li>
         <li>Kullanıcı hesabı, parola, e-posta adresi (uygulamanın hesap sistemi yoktur)</li>
@@ -664,19 +674,19 @@
       <h2><span class="no">04</span> Verinin Saklandığı Yer</h2>
 
       <h3>1. Cihazınız (varsayılan ve tek zorunlu yer)</h3>
-      <p>Tüm kayıtlar cihazınızda <strong>Hive</strong> adlı yerel veritabanı dosyalarında tutulur. Görseller uygulamanın kendi klasöründe dosya olarak durur. Bu veriler uygulamanın korumalı alanındadır; başka uygulamalar okuyamaz.</p>
+      <p>Tüm kayıtlar cihazınızda <strong>Hive</strong> adlı yerel veritabanı dosyalarında tutulur. Görseller uygulamanın kendi klasöründe dosya olarak durur. Bu veriler uygulamanın korumalı alanındadır. Başka uygulamalar okuyamaz.</p>
       <p>Android tarafında uygulama, işletim sisteminin otomatik yedekleme ve cihaz aktarma özelliğinin dışında bırakılmıştır (<code>allowBackup=false</code>). Yani öğrenci verisi, siz istemeden Google hesabınızın yedeğine kopyalanmaz. Veri taşımak istediğinizde uygulamanın kendi şifreli yedek dosyasını kullanırsınız.</p>
 
       <h3>2. Kendi iCloud hesabınız (isteğe bağlı, varsayılan olarak kapalı)</h3>
       <p>iOS'ta senkronizasyonu açarsanız verileriniz <strong>sizin Apple kimliğinize ait özel (private) iCloud alanına</strong> yazılır. Bu alan Apple'ın CloudKit private veritabanı ve uygulamaya özel iCloud konteyneridir. Amaç, aynı Apple hesabındaki iPhone ve iPad'inizin aynı verileri görmesidir.</p>
       <ul>
-        <li>Bu senkron <strong>varsayılan olarak kapalıdır</strong>; siz Ayarlar'dan açana kadar hiçbir şey iCloud'a gitmez.</li>
+        <li>Bu senkron <strong>varsayılan olarak kapalıdır</strong>. Siz Ayarlar'dan açana kadar hiçbir şey iCloud'a gitmez.</li>
         <li>Yazılan senkron dosyası <strong>şifrelenmiş</strong> olarak saklanır.</li>
-        <li>Veriler Apple'ın altyapısında, sizin hesabınızın özel alanında durur. Biz bu alana erişemeyiz; Apple da içeriği uygulamanın dışındaki taraflarla paylaşmaz.</li>
+        <li>Veriler Apple'ın altyapısında, sizin hesabınızın özel alanında durur. Biz bu alana erişemeyiz, Apple da içeriği uygulamanın dışındaki taraflarla paylaşmaz.</li>
       </ul>
 
       <div class="not olumlu">
-        <p><b>Net olalım:</b> Artı Eksi'nin bir arka uç sunucusu, veritabanı veya API'si yoktur. Öğrenci isimleri, puanlar, notlar, telefon numaraları ve fotoğraflar <b>bize hiçbir zaman ulaşmaz</b>. Tek istisna, aşağıda anlatılan ve tamamen sizin başlattığınız "Bize Ulaşın" formudur.</p>
+        <p><b>Net olalım:</b> Artı Eksi'nin bir arka uç sunucusu, veritabanı veya API'si yoktur. Öğrenci isimleri, puanlar, notlar, telefon numaraları ve fotoğraflar <b>bize hiçbir zaman ulaşmaz</b>. Tek istisna, aşağıda anlatılan ve tamamen sizin başlattığınız “Bize Ulaşın” formudur.</p>
       </div>
     </section>
 
@@ -694,19 +704,19 @@
       <h3>Öğretmenin sorumlulukları</h3>
       <ul>
         <li>Öğrenci verisini işlemek için okulunuzun politikasına ve varsa velilerin bilgilendirilmesi/onay süreçlerine uyun.</li>
-        <li>Yalnızca <strong>gerçekten ihtiyacınız olan</strong> veriyi girin. Örneğin veli telefonu gerekmiyorsa boş bırakın; okul numarası yeterliyse tam ad yerine numarayı kullanmayı düşünebilirsiniz.</li>
+        <li>Yalnızca <strong>gerçekten ihtiyacınız olan</strong> veriyi girin. Örneğin veli telefonu gerekmiyorsa boş bırakın. Okul numarası yeterliyse tam ad yerine numarayı kullanmayı düşünebilirsiniz.</li>
         <li>Eğitim yılı bittiğinde veya öğrenci okuldan ayrıldığında kayıtları silin ya da arşivleyin.</li>
-        <li>Cihazınızı ekran kilidiyle koruyun; sınıf listesi ve karne PDF'lerini paylaşırken alıcıyı doğrulayın.</li>
+        <li>Cihazınızı ekran kilidiyle koruyun. Sınıf listesi ve karne PDF'lerini paylaşırken alıcıyı doğrulayın.</li>
       </ul>
 
       <h3>Çocuklardan doğrudan veri toplamıyoruz</h3>
-      <p>Uygulama çocuklara yönelik değildir ve çocuklar tarafından kullanılmak üzere tasarlanmamıştır. Öğrenciler uygulamaya kayıt olmaz, hesap açmaz, veri girmez. Girilen tüm veriyi <strong>öğretmen</strong> girer. Çocuklardan doğrudan hiçbir bilgi toplamadığımız ve bu veriyi hiçbir sunucuya aktarmadığımız için, ABD'deki COPPA düzenlemesi anlamında çocuklardan çevrimiçi bilgi toplayan bir hizmet değiliz.</p>
+      <p>Uygulama çocuklara yönelik değildir ve çocuklar tarafından kullanılmak üzere tasarlanmamıştır. Öğrenciler uygulamaya kayıt olmaz, hesap açmaz, veri girmez. Girilen tüm veriyi <strong>öğretmen</strong> girer. Çocuklardan doğrudan hiçbir bilgi toplamadığımız ve öğrenci kayıtlarını bir sunucuda toplamadığımız için, ABD'deki COPPA düzenlemesi anlamında çocuklardan çevrimiçi bilgi toplayan bir hizmet değiliz. Tek istisna, destek talebine kendi isteğinizle eklediğiniz ekran görüntüleridir · görsellerdeki öğrenci bilgilerini göndermeden önce gizlemeniz tam da bu yüzden önemlidir.</p>
       <p>Bir öğrenciye ait verinin uygulamada bulunmasını istemeyen veli veya vasiler, öncelikle sınıf öğretmeniyle iletişime geçmelidir; kaydı silme yetkisi öğretmendedir ve silme işlemi uygulama içinden saniyeler sürer.</p>
     </section>
 
     <section id="ucuncu">
       <h2><span class="no">06</span> Üçüncü Taraflar</h2>
-      <p>Uygulamanın veriyle temas eden üçüncü taraf listesi kısadır: <strong>Apple iCloud</strong> ve <strong>Formspree</strong>. İkisi de <strong>yalnızca siz tetiklediğinizde</strong> devreye girer. Ekran görüntüsü gönderimi ise bir üçüncü tarafa değil, doğrudan <strong>sizin seçtiğiniz uygulamaya</strong> devredilir.</p>
+      <p>Uygulamanın veriyle temas eden üçüncü taraf listesi kısadır: <strong>Apple iCloud</strong>, <strong>Formspree</strong> ve <strong>Cloudinary</strong>. Üçü de <strong>yalnızca siz tetiklediğinizde</strong> devreye girer: iCloud'u siz açarsanız devreye girer, diğer ikisi ise yalnızca bize destek talebi gönderdiğinizde.</p>
 
       <div class="kart">
         <h3 style="margin-top:0">Apple iCloud · senkron ve yedek</h3>
@@ -715,7 +725,7 @@
 
       <div class="kart">
         <h3 style="margin-top:0">Formspree · iletişim formunun METİN kısmı</h3>
-        <p>Uygulama içindeki <strong>"Bize Ulaşın"</strong> formunun metin kısmı, <a href="https://formspree.io" target="_blank" rel="noopener noreferrer">Formspree</a> (https://formspree.io) altyapısı üzerinden çalışır. Formu gönderdiğinizde Formspree sunucularına yalnızca şu <strong>metin</strong> alanları iletilir ve oradan bize e-posta olarak ulaşır:</p>
+        <p>Uygulama içindeki <strong>“Bize Ulaşın”</strong> formunun metin kısmı, <a href="https://formspree.io" target="_blank" rel="noopener noreferrer">Formspree</a> (https://formspree.io) altyapısı üzerinden çalışır. Formu gönderdiğinizde Formspree sunucularına yalnızca şu <strong>metin</strong> alanları iletilir ve oradan bize e-posta olarak ulaşır:</p>
         <ul>
           <li>Ad soyad</li>
           <li>E-posta adresiniz (size dönebilmemiz için)</li>
@@ -723,38 +733,56 @@
           <li>Uygulama sürümü</li>
           <li>Platform ve işletim sistemi sürümü (sorunu yeniden üretebilmek için)</li>
           <li>Referans kodu (aşağıya bakın)</li>
+          <li>Varsa ekran görüntülerinin adresleri (<code>screenshot_1</code>, <code>screenshot_2</code>, <code>screenshot_3</code>)</li>
         </ul>
         <div class="not olumlu">
-          <p><b>Ekran görüntüleri Formspree'ye gönderilmez.</b> Forma eklediğiniz görseller Formspree sunucularına hiçbir zaman uğramaz. Görsel gönderimi tamamen ayrı bir kanaldan, sizin kendi seçtiğiniz uygulama üzerinden yürür · ayrıntısı bir alttaki maddede.</p>
+          <p><b>Ekran görüntüsü dosyaları Formspree'ye gönderilmez.</b> Görsellerin kendisi Formspree sunucularına hiçbir zaman uğramaz. Dosyalar ayrı bir servise (Cloudinary) yüklenir ve Formspree mesajına yalnızca o görsellerin adresi eklenir · ayrıntısı bir alttaki maddede.</p>
         </div>
         <p>Formspree'ye giden bu metin verileri <strong>yalnızca talebinizi yanıtlamak</strong> için kullanılır. Pazarlama amacıyla kullanılmaz, bülten listesine eklenmez, üçüncü taraflara satılmaz veya devredilmez. Formspree'nin kendi gizlilik politikasını <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener noreferrer">https://formspree.io/legal/privacy-policy/</a> adresinden inceleyebilirsiniz.</p>
       </div>
 
       <div class="kart">
-        <h3 style="margin-top:0">Ekran görüntüleri · cihazınızın paylaşım sayfası</h3>
-        <p>Talebinize ekran görüntüsü eklemek isterseniz uygulama, görselleri kendisi yüklemek yerine <strong>cihazınızın sistem paylaşım sayfasını</strong> açar. Görselleri hangi uygulamayla göndereceğinize <strong>siz karar verirsiniz</strong>: e-posta, mesajlaşma uygulaması, bulut sürücü ya da başka bir şey.</p>
-        <p>Bunun doğal sonucu şudur: görselin hangi şirketin sunucusundan geçeceğini <strong>sizin seçiminiz belirler</strong>. E-posta seçerseniz e-posta sağlayıcınız, WhatsApp seçerseniz Meta, başka bir uygulama seçerseniz o uygulamanın sağlayıcısı devreye girer ve bundan sonrası o hizmetin gizlilik politikasına tabidir. Bu aşamada <strong>biz aracı değiliz</strong>; uygulama görseli hiçbir sunucuya yüklemez, yalnızca sistemin paylaşım sayfasına devreder.</p>
-        <div class="not uyari" style="margin-bottom:0">
-          <p><b>Ekran görüntüsü göndermeden önce:</b> Görselde öğrenci adı, okul numarası, veli telefon numarası veya not bilgisi görünüyorsa bunları <b>karalayarak gizleyin</b>. Bize sorunu anlatmak için çoğu zaman ekranın yalnızca bir bölümü yeterlidir; hassas öğrenci bilgisi göndermeniz gerekmez.</p>
+        <h3 style="margin-top:0">Cloudinary · ekran görüntülerinin yüklendiği yer</h3>
+        <p>Talebinize ekran görüntüsü eklerseniz Gönder'e bastığınız anda görseller uygulamadan doğrudan <strong>Cloudinary</strong> adlı görsel barındırma servisine <strong>HTTPS üzerinden</strong> yüklenir. Cloudinary her görsel için bir adres döndürür ve Formspree mesajına dosyanın kendisi değil, yalnızca <strong>bu adresler</strong> eklenir.</p>
+        <ul>
+          <li>En fazla <strong>3 görsel</strong>, her biri en fazla <strong>5 MB</strong>.</li>
+          <li>Kabul edilen biçimler: JPG, JPEG, PNG, WEBP.</li>
+          <li>Görseller yükleme sırasında en fazla <strong>2000x2000 piksele</strong> küçültülür.</li>
+          <li>Dosyalar <code>support-screenshots</code> klasörüne benzersiz bir adla yazılır · üzerine yazma kapalıdır.</li>
+          <li>Yükleme imzasız (unsigned) bir yükleme ön ayarıyla yapılır. Uygulamanın içinde Cloudinary API anahtarı veya gizli anahtar bulunmaz.</li>
+          <li>Yükleme başarısız olursa mesaj hiç gönderilmez.</li>
+        </ul>
+        <div class="not uyari">
+          <p><b>Bağlantı konusunda açık olalım:</b> Cloudinary'nin ürettiği adres tahmin edilmesi zor, rastgele bir bağlantıdır. Ancak <b>gizli ya da şifreli değildir</b>: bağlantıyı bilen herkes görseli açabilir. Bu yüzden ekran görüntüsüne ne koyduğunuz önemlidir.</p>
         </div>
+        <p style="margin-bottom:0">Yüklenen görseller <strong>yalnızca destek talebinizi yanıtlamak</strong> için kullanılır. Pazarlama amacıyla kullanılmaz, satılmaz, üçüncü taraflara devredilmez. Cloudinary'nin kendi gizlilik politikasını <a href="https://cloudinary.com/privacy" target="_blank" rel="noopener noreferrer">https://cloudinary.com/privacy</a> adresinden inceleyebilirsiniz.</p>
+      </div>
+
+      <div class="kart">
+        <h3 style="margin-top:0">Ekran görüntüsü göndermeden önce · öğrenci bilgilerini gizleyin</h3>
+        <div class="not uyari">
+          <p><b>Bu sayfadaki en önemli uyarı budur.</b> Ekran görüntüsü artık bizim erişemediğimiz üçüncü taraf bir sunucuya (Cloudinary) yüklenir ve bağlantıyı bilen herkes görseli açabilir. Öğrenci verisi sizin sorumluluğunuzdaki veridir · bir kez yüklendikten sonra geri alınamaz.</p>
+          <p style="margin-bottom:0"><b>Göndermeden önce şunları karalayarak gizleyin:</b> öğrenci adı ve soyadı, okul numarası, veli veya öğrenci telefon numarası, notlar ve davranış kayıtları, profil fotoğrafları.</p>
+        </div>
+        <p style="margin-bottom:0">Bize sorunu anlatmak için çoğu zaman ekranın yalnızca küçük bir bölümü yeterlidir. Hassas öğrenci bilgisi göndermeniz <strong>hiçbir zaman gerekmez</strong>. Emin değilseniz görsel eklemeden yalnızca metinle yazın, gerekirse size ayrıca soru sorarız.</p>
       </div>
 
       <div class="kart">
         <h3 style="margin-top:0">Referans kodu · nedir, ne değildir</h3>
-        <p>Mesaj metni ile ekran görüntüleri iki ayrı kanaldan geldiği için, uygulama her gönderim için <strong>AE-7K3M</strong> biçiminde kısa ve rastgele bir kod üretir. Bu kod hem Formspree mesajında hem de paylaşım metninde yer alır; böylece elimize ulaşan görselin hangi mesaja ait olduğunu eşleştirebiliriz.</p>
-        <p style="margin-bottom:0">Referans kodu <strong>kişisel veri içermez</strong>: kimliğinizden, cihazınızdan veya öğrenci verilerinden türetilmez, sizi tanımlamaz ve kullanımınızı izlemek için kullanılmaz. Yalnızca o tek gönderim için üretilmiş rastgele bir etikettir; sizi cihazlar veya oturumlar arasında takip etmesi teknik olarak mümkün değildir.</p>
+        <p>Uygulama her destek gönderimi için <strong>AE-7K3M</strong> biçiminde kısa ve rastgele bir kod üretir. Bu kod Formspree mesajında yer alır, böylece aynı talebe ait mesajı ve görselleri birbiriyle eşleştirebiliriz.</p>
+        <p style="margin-bottom:0">Referans kodu <strong>kişisel veri içermez</strong>: kimliğinizden, cihazınızdan veya öğrenci verilerinden türetilmez, sizi tanımlamaz ve kullanımınızı izlemek için kullanılmaz. Yalnızca o tek gönderim için üretilmiş rastgele bir etikettir. Sizi cihazlar veya oturumlar arasında takip etmesi teknik olarak mümkün değildir.</p>
       </div>
 
       <h3>Cihaz üzerinde çalışan sistem bileşenleri</h3>
-      <p>Aşağıdakiler üçüncü taraf <em>veri alıcısı</em> değildir; işletim sisteminin cihaz üzerinde çalışan bileşenleridir ve içerik dışarı çıkmaz:</p>
+      <p>Aşağıdakiler üçüncü taraf <em>veri alıcısı</em> değildir, işletim sisteminin cihaz üzerinde çalışan bileşenleridir ve içerik dışarı çıkmaz:</p>
       <ul>
         <li><strong>Metin tanıma (OCR):</strong> iOS'ta Apple Vision, Android'de Google ML Kit metin tanıma. Taradığınız belge <strong>cihazda</strong> işlenir, bir sunucuya yüklenmez.</li>
-        <li><strong>QR okuma:</strong> Android'de ML Kit barkod tarayıcı kullanılır. Bu modül gerektiğinde Google Play Hizmetleri üzerinden cihaza indirilebilir; okunan içerik cihazdan çıkmaz.</li>
+        <li><strong>QR okuma:</strong> Android'de ML Kit barkod tarayıcı kullanılır. Bu modül gerektiğinde Google Play Hizmetleri üzerinden cihaza indirilebilir. Okunan içerik cihazdan çıkmaz.</li>
         <li><strong>Cihaz takvimi ve bildirimler:</strong> yerel sistem servisleri.</li>
       </ul>
 
       <h3>Sizin başlattığınız paylaşımlar</h3>
-      <p>Bir karneyi PDF olarak paylaştığınızda, sınıf listesini Excel'e aktardığınızda, QR kodu gönderdiğinizde veya bir ödevi WhatsApp gibi bir uygulamayla paylaştığınızda, veri seçtiğiniz uygulamaya geçer ve bundan sonrası <strong>o uygulamanın gizlilik politikasına</strong> tabidir. Paylaşımı siz başlatırsınız; uygulama kendiliğinden hiçbir şey göndermez.</p>
+      <p>Bir karneyi PDF olarak paylaştığınızda, sınıf listesini Excel'e aktardığınızda, QR kodu gönderdiğinizde veya bir ödevi WhatsApp gibi bir uygulamayla paylaştığınızda, veri seçtiğiniz uygulamaya geçer ve bundan sonrası <strong>o uygulamanın gizlilik politikasına</strong> tabidir. Paylaşımı siz başlatırsınız, uygulama kendiliğinden hiçbir şey göndermez.</p>
     </section>
 
     <section id="reklam">
@@ -765,8 +793,8 @@
       <p>Uygulamanın kaynak kodunda ve bağımlılık listesinde herhangi bir reklam ağı (AdMob vb.), analitik aracı (Firebase Analytics, Google Analytics, Mixpanel, PostHog vb.) veya çökme raporlama servisi (Crashlytics, Sentry vb.) <strong>bulunmamaktadır</strong>.</p>
       <ul>
         <li>Hangi ekranı açtığınız, uygulamayı ne sıklıkla kullandığınız veya hangi özelliği tercih ettiğiniz hiçbir yerde ölçülmez.</li>
-        <li>Reklam kimliğiniz okunmaz; profil çıkarma veya davranışsal hedefleme yapılmaz.</li>
-        <li>Uygulama çökerse bu bize otomatik olarak bildirilmez. Bir sorunu yalnızca siz "Bize Ulaşın" formuyla anlatırsanız öğrenebiliriz.</li>
+        <li>Reklam kimliğiniz okunmaz, profil çıkarma veya davranışsal hedefleme yapılmaz.</li>
+        <li>Uygulama çökerse bu bize otomatik olarak bildirilmez. Bir sorunu yalnızca siz “Bize Ulaşın” formuyla anlatırsanız öğrenebiliriz.</li>
       </ul>
       <p>Uygulamanın internet izni istemesinin sebebi izleme değil; iCloud senkronu, sistem bileşenlerinin kendi modül indirmeleri ve sizin başlattığınız paylaşım işlemleridir.</p>
     </section>
@@ -777,7 +805,7 @@
       <h3>Uygulamanın yaptıkları</h3>
       <ul>
         <li><strong>Yedekler şifrelenir.</strong> Uygulamanın oluşturduğu yedek dosyaları AES-GCM-256 ile şifrelenir. Paylaşılabilir yedeklerde anahtar, sizin belirlediğiniz paroladan veya uygulamanın ürettiği kurtarma anahtarından PBKDF2-SHA256 ile türetilir.</li>
-        <li><strong>Yedek parolası sizindir.</strong> Parolayı siz seçersiniz (8 ile 12 karakter arası) ve biz onu bilmeyiz. Parolayı kaybederseniz o yedek dosyası <strong>açılamaz</strong>; bizim de kurtarma imkânımız yoktur.</li>
+        <li><strong>Yedek parolası sizindir.</strong> Parolayı siz seçersiniz (8 ile 12 karakter arası) ve biz onu bilmeyiz. Parolayı kaybederseniz o yedek dosyası <strong>açılamaz</strong>. Bizim de kurtarma imkânımız yoktur.</li>
         <li><strong>Cihaz anahtarı güvenli depoda.</strong> Sessiz otomatik yedeklerde kullanılan cihaz anahtarı iOS Keychain / Android Keystore içinde saklanır, uygulama dosyalarının içinde düz metin olarak durmaz.</li>
         <li><strong>iCloud senkron dosyası şifreli yazılır</strong> ve yalnızca sizin Apple hesabınızın özel alanında bulunur.</li>
         <li><strong>İşletim sistemi yedeğinden hariç tutma.</strong> Android'de <code>allowBackup=false</code> ile öğrenci verisi cihaz aktarım ve otomatik bulut yedeklerine dahil edilmez.</li>
@@ -789,7 +817,7 @@
       <ul>
         <li>Cihazınızda mutlaka <strong>ekran kilidi</strong> (parola, Face ID, parmak izi) kullanın.</li>
         <li>İşletim sistemi güncellemelerini yükleyin.</li>
-        <li>Yedek dosyalarını ve dışa aktardığınız PDF/Excel çıktılarını rastgele yerlerde bırakmayın. <strong>Dışa aktarılan PDF ve Excel dosyaları şifresizdir</strong>; paylaşırken alıcıyı doğrulayın.</li>
+        <li>Yedek dosyalarını ve dışa aktardığınız PDF/Excel çıktılarını rastgele yerlerde bırakmayın. <strong>Dışa aktarılan PDF ve Excel dosyaları şifresizdir</strong>. Paylaşırken alıcıyı doğrulayın.</li>
         <li>Yedek parolanızı güvenli bir yerde saklayın.</li>
         <li>Cihazınızı bir başkasına devrederken veya satarken önce uygulama içinden tüm veriyi silin.</li>
       </ul>
@@ -806,11 +834,11 @@
         <li><strong>Silme (unutulma hakkı):</strong> Tek bir öğrenciyi, bir sınıfı ya da <strong>Ayarlar &gt; Tüm veriyi sil</strong> ile her şeyi kalıcı olarak silebilirsiniz. Ayrıntılar için bir alttaki bölüme bakın.</li>
         <li><strong>Veri taşınabilirliği:</strong> Şifreli yedek dosyası ile verinizi başka bir cihaza taşıyabilir, Excel/PDF dışa aktarımıyla makine tarafından okunabilir kopyasını alabilirsiniz.</li>
         <li><strong>İşlemeye itiraz ve kısıtlama:</strong> iCloud senkronunu kapatarak, izinleri reddederek veya uygulamayı kaldırarak işlemeyi durdurabilirsiniz.</li>
-        <li><strong>Şikâyet hakkı:</strong> Türkiye'de Kişisel Verileri Koruma Kurumu'na (KVKK), AB'de kendi ülkenizin veri koruma otoritesine başvurabilirsiniz.</li>
+        <li><strong>Şikâyet hakkı:</strong> Türkiye'de Kişisel Verileri Koruma Kurumu'na, AB'de kendi ülkenizin veri koruma otoritesine başvurabilirsiniz.</li>
       </ul>
 
       <div class="not">
-        <p><b>Bir noktayı vurgulayalım:</b> Bize "verilerimi gönder" veya "verilerimi sil" talebiyle başvurmanız halinde, elimizde <b>hiçbir veriniz olmadığı</b> için gönderebileceğimiz ya da silebileceğimiz bir kayıt bulunmaz. Bu bir kaçamak değil, mimarinin doğal sonucudur: veri hiçbir zaman bize ulaşmaz. İstisna, bize Bize Ulaşın formuyla gönderdiğiniz mesajlardır; onların silinmesini talep edebilirsiniz.</p>
+        <p><b>Bir noktayı vurgulayalım:</b> Bize “verilerimi gönder” veya “verilerimi sil” talebiyle başvurmanız halinde, elimizde <b>hiçbir veriniz olmadığı</b> için gönderebileceğimiz ya da silebileceğimiz bir kayıt bulunmaz. Bu bir kaçamak değil, mimarinin doğal sonucudur: veri hiçbir zaman bize ulaşmaz. İstisna, uygulamadaki Bize Ulaşın formuyla bize gönderdiğiniz mesajlardır; onların silinmesini talep edebilirsiniz.</p>
       </div>
     </section>
 
@@ -823,12 +851,12 @@
 
       <h3>2. iCloud kopyasını ayrıca silmek gerekir</h3>
       <div class="not uyari">
-        <p><b>Dikkat:</b> iCloud senkronunu kullandıysanız, cihazdaki veriyi silmek iCloud'daki kopyayı tek başına kaldırmaya yetmez. Üstelik <b>senkron açık kalırsa</b>, bulutta duran kopya bir sonraki eşitlemede geri gelebilir.</p>
+        <p><b>Dikkat:</b> iCloud senkronunu kullandıysanız cihazdaki veriyi silmek iCloud'daki kopyayı tek başına kaldırmaya yetmez. Üstelik <b>senkron açık kalırsa</b> bulutta duran kopya bir sonraki eşitlemede geri gelebilir.</p>
       </div>
       <p>Doğru sıra:</p>
       <ul>
         <li><strong>Önce</strong> Ayarlar'dan iCloud senkronunu <strong>kapatın</strong>.</li>
-        <li><strong>Sonra</strong> uygulamadaki "iCloud yedeğini sil" işlemini çalıştırın.</li>
+        <li><strong>Sonra</strong> uygulamadaki “iCloud yedeğini sil” işlemini çalıştırın.</li>
         <li>Ardından cihazdaki veriyi silin.</li>
       </ul>
       <p>Ayrıca uygulamayı cihazdan kaldırmak, iCloud'daki kopyayı otomatik olarak silmez. Aynı Apple hesabındaki başka bir cihazda uygulama kuruluysa veri orada durmaya devam eder.</p>
@@ -853,7 +881,10 @@
       <p>Gizlilikle ilgili sorularınız, talepleriniz veya bir sorunu bildirmek için:</p>
       <div class="kart">
         <h3 style="margin-top:0">1 · Uygulama içinden</h3>
-        <p><strong>Ayarlar &gt; Bize Ulaşın</strong> formunu kullanabilirsiniz. Mesajınızın <strong>metin kısmı</strong>, 6. bölümde anlatıldığı gibi <strong>Formspree</strong> üzerinden bize e-posta olarak ulaşır. Ekran görüntüsü eklemek isterseniz uygulama bunları kendisi yüklemez; <strong>cihazınızın paylaşım sayfası açılır</strong> ve görselleri seçtiğiniz uygulamayla siz gönderirsiniz. İki gönderimi eşleştirmek için kısa bir referans kodu üretilir. Görsel eklerken <strong>öğrenci bilgilerini gizlemeyi</strong> unutmayın.</p>
+        <p><strong>Ayarlar &gt; Bize Ulaşın</strong> formunu kullanabilirsiniz. Mesajınızın <strong>metin kısmı</strong>, 6. bölümde anlatıldığı gibi <strong>Formspree</strong> üzerinden bize e-posta olarak ulaşır. Ekran görüntüsü eklerseniz görseller <strong>Cloudinary</strong> adlı barındırma servisine yüklenir ve Formspree mesajına yalnızca görselin adresi eklenir. Her gönderim kısa bir referans koduyla etiketlenir.</p>
+        <div class="not uyari">
+          <p style="margin-bottom:0"><b>Görsel eklemeden önce:</b> ekran görüntüsündeki öğrenci adı, okul numarası, telefon numarası ve not bilgilerini <b>karalayarak gizleyin</b>. Görsel bizim erişemediğimiz bir sunucuya yüklenir ve bağlantıyı bilen herkes açabilir.</p>
+        </div>
 
         <h3>2 · E-posta</h3>
         <p class="eposta-satir">
@@ -867,13 +898,13 @@
           </button>
           <span class="eposta-durum" role="status" aria-live="polite"></span>
         </p>
-        <p class="eposta-aciklama">E-posta adresimiz istenmeyen posta koruması nedeniyle sayfada gösterilmez · düğmeye basınca e-posta uygulamanız hazır adresle açılır, "Adresi kopyala" ise adresi doğrudan panonuza alır.</p>
+        <p class="eposta-aciklama">E-posta adresimiz istenmeyen posta koruması nedeniyle sayfada gösterilmez · düğmeye basınca e-posta uygulamanız hazır adresle açılır, “Adresi kopyala” ise adresi doğrudan panonuza alır.</p>
         <noscript><p class="eposta-aciklama">E-posta adresimizi görebilmek için JavaScript gerekir · alternatif olarak uygulama içindeki <strong>Ayarlar &gt; Bize Ulaşın</strong> formunu kullanabilirsiniz.</p></noscript>
 
         <h3>3 · Yanıt süresi</h3>
         <p class="yanit-suresi" style="margin-bottom:0"><span class="etiket yesil">En geç 30 gün</span> Talebinizi en geç 30 gün içinde yanıtlamayı hedefliyoruz.</p>
       </div>
-      <p>Bir veli veya vasi olarak çocuğunuza ait bir kaydın silinmesini istiyorsanız, veri sorumlusu öğretmen ve okul olduğu için önce <strong>sınıf öğretmeniyle</strong> iletişime geçin. Gerekirse süreçte size yardımcı olmaktan memnuniyet duyarız.</p>
+      <p>Bir veli veya vasi olarak çocuğunuza ait bir kaydın silinmesini istiyorsanız veri sorumlusu öğretmen ve okul olduğu için önce <strong>sınıf öğretmeniyle</strong> iletişime geçin. Gerekirse süreçte size yardımcı olmaktan memnuniyet duyarız.</p>
     </section>
 
   </main>
