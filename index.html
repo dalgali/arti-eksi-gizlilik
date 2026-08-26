@@ -521,7 +521,7 @@
       <h2><span class="no">01</span> Giriş</h2>
       <p><strong>Artı Eksi</strong>, öğretmenlerin sınıflarını, öğrencilerini, artı/eksi puanlarını, ödevlerini, proje ödevlerini, ajandalarını ve birebir derslerini takip etmesi için tasarlanmış bir mobil uygulamadır. Uygulama <strong>çevrimdışı çalışır</strong>: kaydettiğiniz her şey öncelikle kendi cihazınızda durur.</p>
       <p>Bu gizlilik politikası; uygulamanın hangi verileri işlediğini, bu verilerin nerede saklandığını, kimlerle paylaşıldığını (ve paylaşılmadığını) ve KVKK ile GDPR kapsamındaki haklarınızı açıklar. Metin, uygulamanın kaynak kodundaki gerçek veri akışına göre yazılmıştır.</p>
-      <p><strong>Yürürlük tarihi:</strong> Ağustos 2026 · <strong>Son güncelleme:</strong> Ağustos 2026</p>
+      <p><strong>Yürürlük tarihi:</strong> Ağustos 2026 · <strong>Son güncelleme:</strong> 26 Ağustos 2026</p>
       <div class="not">
         <p><b>Önemli bir ayrım:</b> Artı Eksi'nin bir kullanıcı hesabı, giriş ekranı veya arka planda veri toplayan bir sunucusu yoktur. Bu nedenle, siz açıkça bizimle iletişime geçmediğiniz sürece verilerinize erişimimiz teknik olarak mümkün değildir.</p>
       </div>
@@ -595,6 +595,12 @@
               <td data-etiket="Ne kadar süre">Siz silene kadar</td>
             </tr>
             <tr>
+              <th scope="row">Öğrenci belgeleri<br><span class="etiket mor">öğrenci sözleşmesi, veli görüşmesi, görüşme notları ve katılımcı bilgileri</span></th>
+              <td data-etiket="Neden">Öğrenciye ilişkin görüşme ve belge süreçlerini hazırlamak, saklamak ve raporlamak</td>
+              <td data-etiket="Nerede saklanır">Cihazda yerel veritabanı. iCloud senkronu açıksa ayrıca sizin Apple hesabınız</td>
+              <td data-etiket="Ne kadar süre">Siz silene kadar</td>
+            </tr>
+            <tr>
               <th scope="row">Birebir ders kayıtları<br><span class="etiket mor">öğrenci/veli telefon numarası, ders notları, ücret ve ödeme hareketleri</span></th>
               <td data-etiket="Neden">Özel ders planlama, ödeme takibi, veliyle iletişim kurabilme</td>
               <td data-etiket="Nerede saklanır">Cihazda yerel veritabanı</td>
@@ -662,7 +668,7 @@
       <p>Uygulama şu izinleri ister · her biri yalnızca ilgili özelliği kullandığınızda devreye girer, reddetmeniz uygulamanın geri kalanını etkilemez:</p>
       <ul>
         <li><strong>Kamera:</strong> belge/ödev fotoğrafı çekmek ve sınıf listesi QR kodunu okumak için.</li>
-        <li><strong>Fotoğraflar:</strong> profil fotoğrafı veya ödev görseli seçmek, oluşturduğunuz QR kodunu galeriye kaydetmek için.</li>
+        <li><strong>Fotoğraflar:</strong> profil fotoğrafı veya ödev görseli seçmek; QR kodu, ödev paylaşım görseli ve haftalık ders programını ortak ArtıEksi albümüne kaydetmek için.</li>
         <li><strong>Rehber (iOS):</strong> veli veya öğrenci telefon numarasını elle yazmak yerine rehberden seçmek için.</li>
         <li><strong>Takvim:</strong> ajanda notlarınızı cihazınızın takvimine eklemek için.</li>
         <li><strong>Bildirimler:</strong> ders, ödev ve ajanda hatırlatmaları için.</li>
@@ -846,20 +852,15 @@
       <h2><span class="no">10</span> Veri Silme</h2>
 
       <h3>1. Uygulama içinden silme</h3>
-      <p><strong>Ayarlar &gt; Tüm veriyi sil</strong> adımı; sınıfları, öğrencileri, puan kayıtlarını, notları, ödev ve proje ödevlerini, ajandayı, birebir ders modülünün tüm kayıtlarını, profil fotoğrafını, yerel yedekleri ve dışa aktarma dosyalarını cihazdan kalıcı olarak siler. İşlem geri alınamaz.</p>
+      <p><strong>Ayarlar &gt; Tüm veriyi sil</strong> adımı; sınıfları, öğrencileri, puan kayıtlarını, notları, ödev ve proje ödevlerini, öğrenci sözleşmelerini, veli görüşmelerini, ajandayı, birebir ders modülünün tüm kayıtlarını, Son Değişiklikler geçmişini, profil fotoğrafını, yerel yedekleri ve dışa aktarma dosyalarını cihazdan kalıcı olarak siler. İşlem geri alınamaz.</p>
       <p>Daha dar kapsamlı silmeler için tek bir öğrenciyi veya sınıfı kendi ekranından silebilirsiniz.</p>
 
-      <h3>2. iCloud kopyasını ayrıca silmek gerekir</h3>
+      <h3>2. iCloud kopyası ve diğer cihazlar</h3>
       <div class="not uyari">
-        <p><b>Dikkat:</b> iCloud senkronunu kullandıysanız cihazdaki veriyi silmek iCloud'daki kopyayı tek başına kaldırmaya yetmez. Üstelik <b>senkron açık kalırsa</b> bulutta duran kopya bir sonraki eşitlemede geri gelebilir.</p>
+        <p><b>Dikkat:</b> “Tüm veriyi sil” işlemi sırasında varsa uygulamaya ait iCloud kopyası da kaldırılır ve eski bulut verisinin bu cihaza otomatik indirilmesini engelleyen sıfırlama koruması açılır.</p>
       </div>
-      <p>Doğru sıra:</p>
-      <ul>
-        <li><strong>Önce</strong> Ayarlar'dan iCloud senkronunu <strong>kapatın</strong>.</li>
-        <li><strong>Sonra</strong> uygulamadaki “iCloud yedeğini sil” işlemini çalıştırın.</li>
-        <li>Ardından cihazdaki veriyi silin.</li>
-      </ul>
-      <p>Ayrıca uygulamayı cihazdan kaldırmak, iCloud'daki kopyayı otomatik olarak silmez. Aynı Apple hesabındaki başka bir cihazda uygulama kuruluysa veri orada durmaya devam eder.</p>
+      <p>iCloud temizliği bağlantı nedeniyle tamamlanamazsa uygulama bunu açıkça bildirir; yerel silme yine tamamlanır ve sıfırlama koruması açık kalır. İnternet bağlantısını düzelttikten sonra işlemi yeniden çalıştırabilirsiniz.</p>
+      <p>Aynı Apple hesabındaki başka bir cihazda uygulamanın eski verileri yerel olarak duruyorsa ve o cihazda senkron açıksa, bu cihaz iCloud alanını yeniden oluşturabilir. Her şeyi tamamen kaldırmak için diğer cihazlardaki verileri de silin veya senkronu kapatın. Yalnızca uygulamayı cihazdan kaldırmak iCloud kopyasını otomatik olarak silmez.</p>
 
       <h3>3. Paylaştığınız dosyalar</h3>
       <p>Daha önce e-posta, mesajlaşma uygulaması veya bulut sürücüyle paylaştığınız PDF, Excel ve yedek dosyaları uygulamanın erişim alanı dışındadır. Onları ilgili yerden ayrıca silmeniz gerekir.</p>
