@@ -521,7 +521,7 @@
       <h2><span class="no">01</span> Giriş</h2>
       <p><strong>Artı Eksi</strong>, öğretmenlerin sınıflarını, öğrencilerini, artı/eksi puanlarını, ödevlerini, proje ödevlerini, ajandalarını ve birebir derslerini takip etmesi için tasarlanmış bir mobil uygulamadır. Uygulama <strong>çevrimdışı çalışır</strong>: kaydettiğiniz her şey öncelikle kendi cihazınızda durur.</p>
       <p>Bu gizlilik politikası; uygulamanın hangi verileri işlediğini, bu verilerin nerede saklandığını, kimlerle paylaşıldığını (ve paylaşılmadığını) ve KVKK ile GDPR kapsamındaki haklarınızı açıklar. Metin, uygulamanın kaynak kodundaki gerçek veri akışına göre yazılmıştır.</p>
-      <p><strong>Yürürlük tarihi:</strong> Ağustos 2026 · <strong>Son güncelleme:</strong> 26 Ağustos 2026</p>
+      <p><strong>Yürürlük tarihi:</strong> Ağustos 2026 · <strong>Son güncelleme:</strong> 27 Ağustos 2026</p>
       <div class="not">
         <p><b>Önemli bir ayrım:</b> Artı Eksi'nin bir kullanıcı hesabı, giriş ekranı veya arka planda veri toplayan bir sunucusu yoktur. Bu nedenle, siz açıkça bizimle iletişime geçmediğiniz sürece verilerinize erişimimiz teknik olarak mümkün değildir.</p>
       </div>
@@ -687,7 +687,7 @@
       <p>iOS'ta senkronizasyonu açarsanız verileriniz <strong>sizin Apple kimliğinize ait özel (private) iCloud alanına</strong> yazılır. Bu alan Apple'ın CloudKit private veritabanı ve uygulamaya özel iCloud konteyneridir. Amaç, aynı Apple hesabındaki iPhone ve iPad'inizin aynı verileri görmesidir.</p>
       <ul>
         <li>Bu senkron <strong>varsayılan olarak kapalıdır</strong>. Siz Ayarlar'dan açana kadar hiçbir şey iCloud'a gitmez.</li>
-        <li>Yazılan senkron dosyası <strong>şifrelenmiş</strong> olarak saklanır.</li>
+        <li>Yazılan senkron dosyası <strong>şifrelenmiş</strong> olarak saklanır. Bu dosyanın anahtarı, aynı hesaba bağlı tüm cihazlarınız parola sormadan açabilsin diye uygulama tarafından yönetilir · yedek dosyalarında olduğu gibi sizin belirlediğiniz paroladan türetilmez. Dolayısıyla senkron dosyasını asıl koruyan, Apple hesabınızın o özel alana erişim denetimidir. Bu nedenle senkronu &ldquo;uçtan uca şifreli&rdquo; diye tanımlamıyoruz.</li>
         <li>Veriler Apple'ın altyapısında, sizin hesabınızın özel alanında durur. Biz bu alana erişemeyiz, Apple da içeriği uygulamanın dışındaki taraflarla paylaşmaz.</li>
       </ul>
 
@@ -813,7 +813,7 @@
         <li><strong>Yedekler şifrelenir.</strong> Uygulamanın oluşturduğu yedek dosyaları AES-GCM-256 ile şifrelenir. Paylaşılabilir yedeklerde anahtar, sizin belirlediğiniz paroladan veya uygulamanın ürettiği kurtarma anahtarından PBKDF2-SHA256 ile türetilir.</li>
         <li><strong>Yedek parolası sizindir.</strong> Parolayı siz seçersiniz (8 ile 12 karakter arası) ve biz onu bilmeyiz. Parolayı kaybederseniz o yedek dosyası <strong>açılamaz</strong>. Bizim de kurtarma imkânımız yoktur.</li>
         <li><strong>Cihaz anahtarı güvenli depoda.</strong> Sessiz otomatik yedeklerde kullanılan cihaz anahtarı iOS Keychain / Android Keystore içinde saklanır, uygulama dosyalarının içinde düz metin olarak durmaz.</li>
-        <li><strong>iCloud senkron dosyası şifreli yazılır</strong> ve yalnızca sizin Apple hesabınızın özel alanında bulunur.</li>
+        <li><strong>iCloud senkron dosyası şifreli yazılır</strong> ve yalnızca sizin Apple hesabınızın özel alanında bulunur. Senkron dosyasının anahtarı, cihazlarınız arasında parolasız çalışabilmesi için uygulama tarafından yönetilir; bu yüzden senkronu uçtan uca şifreli olarak tanımlamıyoruz. Paylaşılabilir yedek dosyalarında ise anahtar sizin parolanızdan türetilir ve biz onu bilemeyiz.</li>
         <li><strong>İşletim sistemi yedeğinden hariç tutma.</strong> Android'de <code>allowBackup=false</code> ile öğrenci verisi cihaz aktarım ve otomatik bulut yedeklerine dahil edilmez.</li>
         <li><strong>Veri korumalı alanda.</strong> Uygulamanın veritabanı ve görselleri, işletim sisteminin diğer uygulamalardan izole ettiği alanda tutulur.</li>
       </ul>
@@ -921,7 +921,7 @@
       <rect x="39.5" y="72" width="21" height="4" rx="1.2" fill="var(--logo-acik)"/>
       <circle cx="50" cy="50" r="48" fill="none" stroke="var(--logo-mor)" stroke-width="3"/>
     </svg>
-    <span>Artı Eksi · Gizlilik Politikası · Son güncelleme 26 Ağustos 2026 · <a class="eposta-gonder" href="#iletisim" aria-label="E-posta gönder" rel="nofollow">E-posta</a></span>
+    <span>Artı Eksi · Gizlilik Politikası · Son güncelleme 27 Ağustos 2026 · <a class="eposta-gonder" href="#iletisim" aria-label="E-posta gönder" rel="nofollow">E-posta</a></span>
   </div>
 </footer>
 
