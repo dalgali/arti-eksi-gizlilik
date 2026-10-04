@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-itunes-app" content="app-id=6808573191">
 <title>Artı Eksi Gizlilik Politikası</title>
 <meta name="description" content="Artı Eksi öğretmen uygulamasının gizlilik politikası: verileriniz cihazınızda kalır, sunucumuz yoktur, reklam ve analitik izleme kullanılmaz.">
 <meta name="color-scheme" content="light dark">
@@ -429,9 +430,83 @@
     body { font-size: 16px; }
     .kart { padding: 18px 16px; }
   }
+
+  /* ---------- Mağaza bandı (tanıtım, destek ve gizlilik sayfalarında aynı) ---------- */
+  .magaza-bandi {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px max(14px, calc((100% - 960px) / 2));
+    background: var(--yuzey, #FAFAFA);
+    border-bottom: 1px solid var(--ayirici, #DDD6FE);
+    color: var(--yazi, #111827);
+  }
+  .magaza-bandi[hidden] { display: none; }
+  .magaza-bandi .mb-ikon {
+    flex: none; width: 44px; height: 44px; border-radius: 10px;
+    background: #FFFFFF; box-shadow: 0 0 0 1px rgba(17, 24, 39, .08);
+    display: grid; place-items: center;
+  }
+  .magaza-bandi .mb-yazi { flex: 1; min-width: 0; line-height: 1.25; }
+  .magaza-bandi .mb-ad { font-weight: 650; font-size: 15px; }
+  .magaza-bandi .mb-alt {
+    font-size: 13px; color: var(--yazi-ikincil, #4B5563);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .magaza-bandi .mb-dugmeler { display: flex; gap: 8px; flex: none; }
+  .magaza-bandi .mb-dugme {
+    display: inline-block; padding: 7px 16px; border-radius: 999px;
+    background: var(--vurgu, #46178F); color: #FFFFFF;
+    font-weight: 600; font-size: 14px; text-decoration: none; white-space: nowrap;
+  }
+  .magaza-bandi .mb-dugme:hover { filter: brightness(1.1); }
+  .magaza-bandi .mb-dugme[hidden] { display: none; }
+  .magaza-bandi .mb-kapat {
+    flex: none; width: 24px; height: 24px; margin-right: -4px; padding: 0;
+    border: 0; border-radius: 50%;
+    background: transparent; color: var(--silik, #6B7280);
+    font-size: 18px; line-height: 1; cursor: pointer;
+  }
+  .magaza-bandi .mb-kapat:hover { background: var(--ayirici, #DDD6FE); }
 </style>
 </head>
 <body>
+<!-- Mağaza bandı (tanıtım, destek ve gizlilik sayfalarında aynı). iPhone/iPad Safari'de
+     Apple'ın kendi bandı (apple-itunes-app) çıkar, bu bant gizlenir. -->
+<div class="magaza-bandi" id="magaza-bandi" role="region" aria-label="Uygulamayı indir" hidden>
+  <span class="mb-ikon" aria-hidden="true">
+    <svg width="36" height="36" viewBox="0 0 100 100"><circle cx="50" cy="50" r="49.5" fill="#FFFFFF"/><path d="M50 2 a48 48 0 0 1 0 96 a24 24 0 0 1 0-48 a24 24 0 0 0 0-48" fill="#46178F"/><rect x="39.5" y="24" width="21" height="4.6" rx="1.2" fill="#46178F"/><rect x="47.7" y="15.8" width="4.6" height="21" rx="1.2" fill="#46178F"/><rect x="39.5" y="72" width="21" height="4" rx="1.2" fill="#FFFFFF"/><circle cx="50" cy="50" r="48" fill="none" stroke="#46178F" stroke-width="3"/></svg>
+  </span>
+  <span class="mb-yazi">
+    <span class="mb-ad">Artı Eksi</span><br>
+    <span class="mb-alt">Öğretmenler için sınıf takibi · Ücretsiz</span>
+  </span>
+  <span class="mb-dugmeler">
+    <a class="mb-dugme" id="mb-app-store" href="https://apps.apple.com/tr/app/art%C4%B1-eksi/id6808573191" rel="noopener">App Store</a>
+    <a class="mb-dugme" id="mb-google-play" href="https://play.google.com/store/apps/details?id=com.artieksi.app" rel="noopener">Google Play</a>
+  </span>
+  <button class="mb-kapat" type="button" aria-label="Kapat">&times;</button>
+</div>
+<script>
+(function () {
+  var bant = document.getElementById('magaza-bandi');
+  var anahtar = 'artieksi-magaza-bandi-kapatildi';
+  try { if (localStorage.getItem(anahtar)) return; } catch (e) {}
+  var ua = navigator.userAgent;
+  var ios = /iPhone|iPad|iPod/.test(ua) ||
+    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  var android = /Android/.test(ua);
+  // iOS Safari'de Apple'ın bandı zaten çıkıyor.
+  if (ios && !/CriOS|FxiOS|EdgiOS|OPiOS/.test(ua)) return;
+  var appStore = document.getElementById('mb-app-store');
+  var googlePlay = document.getElementById('mb-google-play');
+  if (ios) { googlePlay.hidden = true; appStore.textContent = 'İndir'; }
+  if (android) { appStore.hidden = true; googlePlay.textContent = 'İndir'; }
+  bant.hidden = false;
+  bant.querySelector('.mb-kapat').addEventListener('click', function () {
+    bant.hidden = true;
+    try { localStorage.setItem(anahtar, '1'); } catch (e) {}
+  });
+})();
+</script>
 
 <a class="atla" href="#giris">İçeriğe atla</a>
 
